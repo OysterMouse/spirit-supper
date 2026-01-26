@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://boc7rgloqrhwe"]
+
+[ext_resource type="Script" uid="uid://m60fijagcay" path="res://scripts/items/item_data.gd" id="1_hupc6"]
+[ext_resource type="Texture2D" uid="uid://bn74equklqhku" path="res://assets/Icons.png" id="2_8iv85"]
+[ext_resource type="PackedScene" uid="uid://ceehwxdf27snu" path="res://scenes/game_item.tscn" id="3_8llqh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u72g"]
+atlas = ExtResource("2_8iv85")
+region = Rect2(17, 19, 13, 12)
+
+[resource]
+script = ExtResource("1_hupc6")
+item_name = "Orange"
+texture = SubResource("AtlasTexture_4u72g")
+world_item_scene = ExtResource("3_8llqh")
+description = "A delicious orange"
+stack_size = 2
+metadata/_custom_type_script = "uid://m60fijagcay"
