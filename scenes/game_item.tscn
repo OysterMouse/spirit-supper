@@ -1,17 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://ceehwxdf27snu"]
+[gd_scene format=3 uid="uid://ceehwxdf27snu"]
 
 [ext_resource type="Script" uid="uid://crdlw3m4k7e1q" path="res://scripts/items/game_item.gd" id="1_vvfql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0m3xb"]
 
-[node name="GameItem" type="Node2D"]
+[node name="GameItem" type="Node2D" unique_id=232831870]
 script = ExtResource("1_vvfql")
 
-[node name="Item" type="Sprite2D" parent="."]
+[node name="Item" type="Sprite2D" parent="." unique_id=1649425925]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=728810701]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1664134958]
 shape = SubResource("RectangleShape2D_0m3xb")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

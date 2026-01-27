@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://oyexr40p88xf"]
+[gd_scene format=3 uid="uid://oyexr40p88xf"]
 
 [ext_resource type="Texture2D" uid="uid://cmo6t48smutnl" path="res://assets/nine_path_panel.png" id="1_2vb5y"]
 [ext_resource type="Script" uid="uid://db3sc0n6cn523" path="res://scripts/ui/inventory_gui.gd" id="1_ba86g"]
 
-[node name="InventoryGUI" type="Control"]
+[node name="InventoryGUI" type="Control" unique_id=436253489]
 custom_minimum_size = Vector2(200, 120)
 layout_mode = 3
 anchors_preset = 0
@@ -11,7 +11,7 @@ offset_right = 200.0
 offset_bottom = 120.0
 script = ExtResource("1_ba86g")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1987852701]
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 120.0
@@ -21,7 +21,7 @@ patch_margin_top = 6
 patch_margin_right = 6
 patch_margin_bottom = 6
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect" unique_id=1677088450]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

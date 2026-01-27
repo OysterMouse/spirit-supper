@@ -1,4 +1,4 @@
-[gd_scene load_steps=180 format=3 uid="uid://bttrvoq3ggfv2"]
+[gd_scene format=3 uid="uid://bttrvoq3ggfv2"]
 
 [ext_resource type="Texture2D" uid="uid://dissvfvohdjc2" path="res://assets/Walk.png" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://bmt6nd661a64e" path="res://assets/Sword.png" id="1_qhqgy"]
@@ -1699,24 +1699,22 @@ states/Idle/position = Vector2(364, 63)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_qfm1y")
 states/Walk/position = Vector2(476, 75)
 
-[node name="Player" type="CharacterBody2D" groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=2113674106 groups=["player"]]
 script = ExtResource("1_qlg0r")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1597308256]
 sprite_frames = SubResource("SpriteFrames_ujl30")
 animation = &"idle_east"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1377791231]
 position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_3vyb7")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_vx63k")
-}
-autoplay = "idle_east"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=90484161]
+libraries/ = SubResource("AnimationLibrary_vx63k")
+autoplay = &"idle_east"
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=527140569]
 tree_root = SubResource("AnimationNodeStateMachine_fulsm")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Attack_1/blend_position = Vector2(0, 0)
@@ -1725,40 +1723,40 @@ parameters/Chop/blend_position = Vector2(0, 0)
 parameters/Idle/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=1299370368 node_paths=PackedStringArray("starting_state")]
 script = ExtResource("5_tuyoq")
 starting_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("move_state", "attack_state")]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=57305712 node_paths=PackedStringArray("move_state", "attack_state")]
 script = ExtResource("6_fjrip")
 move_state = NodePath("../Move")
 attack_state = NodePath("../Attack")
 animation_name = "Idle"
 
-[node name="Move" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "attack_state")]
+[node name="Move" type="Node" parent="StateMachine" unique_id=1879506503 node_paths=PackedStringArray("idle_state", "attack_state")]
 script = ExtResource("7_smehm")
 idle_state = NodePath("../Idle")
 attack_state = NodePath("../Attack")
 animation_name = "Walk"
 
-[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("idle_state", "move_state")]
+[node name="Attack" type="Node" parent="StateMachine" unique_id=62045827 node_paths=PackedStringArray("idle_state", "move_state")]
 script = ExtResource("8_ur7pv")
 idle_state = NodePath("../Idle")
 move_state = NodePath("../Move")
 animation_name = "Attack_1"
 
-[node name="Chop" type="Node" parent="StateMachine"]
+[node name="Chop" type="Node" parent="StateMachine" unique_id=1032366964]
 script = ExtResource("10_d2wvv")
 animation_name = "Chop"
 
-[node name="Components" type="Node" parent="."]
+[node name="Components" type="Node" parent="." unique_id=18848011]
 
-[node name="InputComponent" type="Node" parent="Components"]
+[node name="InputComponent" type="Node" parent="Components" unique_id=413054499]
 script = ExtResource("6_tuyoq")
 
-[node name="Inventory" parent="." instance=ExtResource("13_jej6c")]
+[node name="Inventory" parent="." unique_id=532348543 instance=ExtResource("13_jej6c")]
 
-[node name="InventoryGUI" parent="." node_paths=PackedStringArray("inventory") instance=ExtResource("14_f1ej7")]
+[node name="InventoryGUI" parent="." unique_id=1108518581 node_paths=PackedStringArray("inventory") instance=ExtResource("14_f1ej7")]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://brk2awunpm6u0"]
+[gd_scene format=3 uid="uid://brk2awunpm6u0"]
 
 [ext_resource type="Script" uid="uid://vkq4pdykhdjg" path="res://scripts/ui/hotbar.gd" id="1_4qkdb"]
 [ext_resource type="Texture2D" uid="uid://dogqvgvwh3kqo" path="res://assets/1.png" id="1_yj1xu"]
@@ -15,7 +15,7 @@ region = Rect2(98, 3, 10, 11)
 atlas = ExtResource("1_yj1xu")
 region = Rect2(34, 2, 12, 12)
 
-[node name="Hotbar" type="MarginContainer"]
+[node name="Hotbar" type="MarginContainer" unique_id=1161711699]
 custom_minimum_size = Vector2(240, 32)
 anchors_preset = 7
 anchor_left = 0.5
@@ -29,10 +29,10 @@ grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_4qkdb")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=206502283]
 layout_mode = 2
 
-[node name="ToolAxe" type="Button" parent="HBoxContainer"]
+[node name="ToolAxe" type="Button" parent="HBoxContainer" unique_id=1654189126]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -40,45 +40,45 @@ icon = SubResource("AtlasTexture_4qkdb")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ToolHoe" type="Button" parent="HBoxContainer"]
+[node name="ToolHoe" type="Button" parent="HBoxContainer" unique_id=729239147]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 icon = SubResource("AtlasTexture_xrqkv")
 icon_alignment = 1
 expand_icon = true
 
-[node name="ToolSword" type="Button" parent="HBoxContainer"]
+[node name="ToolSword" type="Button" parent="HBoxContainer" unique_id=1302605413]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 icon = SubResource("AtlasTexture_2n1yv")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Button4" type="Button" parent="HBoxContainer"]
+[node name="Button4" type="Button" parent="HBoxContainer" unique_id=201454285]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="Button5" type="Button" parent="HBoxContainer"]
+[node name="Button5" type="Button" parent="HBoxContainer" unique_id=1719766050]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="Button6" type="Button" parent="HBoxContainer"]
+[node name="Button6" type="Button" parent="HBoxContainer" unique_id=1935203895]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="Button7" type="Button" parent="HBoxContainer"]
+[node name="Button7" type="Button" parent="HBoxContainer" unique_id=3287809]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="Button8" type="Button" parent="HBoxContainer"]
+[node name="Button8" type="Button" parent="HBoxContainer" unique_id=1746793587]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="Button9" type="Button" parent="HBoxContainer"]
+[node name="Button9" type="Button" parent="HBoxContainer" unique_id=2003272017]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
-[node name="Button10" type="Button" parent="HBoxContainer"]
+[node name="Button10" type="Button" parent="HBoxContainer" unique_id=1822383862]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 
