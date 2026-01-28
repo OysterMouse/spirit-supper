@@ -1,20 +1,17 @@
 extends Node2D
 
-var item : ItemData = preload("res://resources/items/orange.tres")
+var item_orange : ItemData = preload("res://resources/items/orange.tres")
+var item_banana : ItemData = preload("res://resources/items/banana.tres")
 
 func _ready() -> void:
-	var orange : GameItem = item.world_item_scene.instantiate()
-	orange.setup(item)
+	var orange : GameItem = item_orange.world_item_scene.instantiate()
+	orange.setup(item_orange)
 	orange.global_position = Vector2(120, 120)
 	orange.z_index = 1
 	add_child(orange)
-	var orange2 : GameItem = item.world_item_scene.instantiate()
-	orange2.setup(item)
-	orange2.global_position = Vector2(220, 120)
-	orange2.z_index = 1
-	add_child(orange2)
-	var orange3 : GameItem = item.world_item_scene.instantiate()
-	orange3.setup(item)
-	orange3.global_position = Vector2(120, 220)
-	orange3.z_index = 1
-	add_child(orange3)
+	
+	var banana : GameItem = item_banana.world_item_scene.instantiate()
+	banana.setup(item_banana)
+	banana.global_position = Vector2(220, 120)
+	banana.z_index = 1
+	add_child(banana)

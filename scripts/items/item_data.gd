@@ -3,6 +3,7 @@ extends Resource
 
 @export var item_name: String
 @export var texture: Texture2D
-@export var world_item_scene: PackedScene
+var world_item_scene: PackedScene = preload("res://scenes/game_item.tscn")
 @export var description: String
 @export var stack_size: int = 1
+@export var is_tool: bool = false

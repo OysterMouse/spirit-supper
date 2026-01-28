@@ -4,17 +4,17 @@
 [ext_resource type="Script" uid="uid://db3sc0n6cn523" path="res://scripts/ui/inventory_gui.gd" id="1_ba86g"]
 
 [node name="InventoryGUI" type="Control" unique_id=436253489]
-custom_minimum_size = Vector2(200, 120)
+custom_minimum_size = Vector2(200, 60)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 200.0
-offset_bottom = 120.0
+offset_bottom = 60.0
 script = ExtResource("1_ba86g")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1987852701]
 layout_mode = 0
 offset_right = 200.0
-offset_bottom = 120.0
+offset_bottom = 60.0
 texture = ExtResource("1_2vb5y")
 patch_margin_left = 6
 patch_margin_top = 6
@@ -28,10 +28,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -58.0
-offset_top = -34.0
-offset_right = 58.0
-offset_bottom = 34.0
+offset_left = -91.0
+offset_top = -22.0
+offset_right = 91.0
+offset_bottom = 22.0
 grow_horizontal = 2
 grow_vertical = 2
 columns = 8

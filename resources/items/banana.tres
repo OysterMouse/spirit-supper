@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dctebfs1f6tqp"]
+
+[ext_resource type="Script" uid="uid://m60fijagcay" path="res://scripts/items/item_data.gd" id="1_1xm7w"]
+[ext_resource type="Texture2D" uid="uid://bn74equklqhku" path="res://assets/Icons.png" id="2_2bfpa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rsuuw"]
+atlas = ExtResource("2_2bfpa")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_1xm7w")
+item_name = "Banana"
+texture = SubResource("AtlasTexture_rsuuw")
+description = "Tasty banana"
+is_tool = true
+metadata/_custom_type_script = "uid://m60fijagcay"

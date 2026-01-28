@@ -4,3 +4,4 @@
 
 [node name="Inventory" type="Node" unique_id=479227494]
 script = ExtResource("1_qw0r6")
+size = 20

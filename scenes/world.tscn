@@ -1373,7 +1373,7 @@ sources/0 = SubResource("TileSetAtlasSource_4wyf3")
 [node name="World" type="Node2D" unique_id=2006691139]
 script = ExtResource("1_71j4m")
 
-[node name="Layers" type="Node" parent="." unique_id=277627571]
+[node name="Layers" type="Node2D" parent="." unique_id=1073178625]
 
 [node name="Dirt" type="TileMapLayer" parent="Layers" unique_id=178261873]
 z_index = -1
@@ -1385,5 +1385,5 @@ z_index = 1
 position = Vector2(166, 72)
 move_speed = 100.0
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=486535506]
-zoom = Vector2(2, 2)
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1950744107]
+zoom = Vector2(1.5, 1.5)

@@ -1755,6 +1755,7 @@ animation_name = "Chop"
 script = ExtResource("6_tuyoq")
 
 [node name="Inventory" parent="." unique_id=532348543 instance=ExtResource("13_jej6c")]
+size = 16
 
 [node name="InventoryGUI" parent="." unique_id=1108518581 node_paths=PackedStringArray("inventory") instance=ExtResource("14_f1ej7")]
 visible = false
@@ -1766,7 +1767,7 @@ anchor_bottom = 0.5
 offset_left = -100.0
 offset_top = -60.0
 offset_right = 100.0
-offset_bottom = 60.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 inventory = NodePath("../Inventory")

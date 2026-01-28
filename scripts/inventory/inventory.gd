@@ -7,9 +7,18 @@ var slots : Array[InventorySlot] = []
 
 signal changed
 
-func _init() -> void:
-	for i in size:
-		slots.append(null)
+func _ready() -> void:
+	_resize_inventory()
+
+func _resize_inventory() -> void:
+	var old_size = slots.size()
+	if old_size < size:
+		# Expand: add null slots
+		for i in range(size - old_size):
+			slots.append(null)
+	elif old_size > size:
+		# Shrink: remove excess slots (keep items if possible)
+		slots.resize(size)
 
 func add_item(item: ItemData, amount : int = 1):
 	var remaining : int = amount
