@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://brnmshsg4h38p" path="res://scripts/world.gd" id="1_71j4m"]
 [ext_resource type="PackedScene" uid="uid://bttrvoq3ggfv2" path="res://scenes/player.tscn" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://kp8p0ixatw8r" path="res://assets/Tileset Grass Deep Forest.png" id="2_rwgxs"]
+[ext_resource type="Script" uid="uid://dvt5rt4vnuete" path="res://scripts/items/item_spawner.gd" id="4_i7141"]
+[ext_resource type="Script" uid="uid://m60fijagcay" path="res://scripts/items/item_data.gd" id="5_4mrxx"]
+[ext_resource type="Resource" uid="uid://dctebfs1f6tqp" path="res://resources/items/banana.tres" id="6_7r4gi"]
+[ext_resource type="Resource" uid="uid://boc7rgloqrhwe" path="res://resources/items/orange.tres" id="7_w7kh3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("2_rwgxs")
@@ -1385,5 +1389,7 @@ z_index = 1
 position = Vector2(166, 72)
 move_speed = 100.0
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1950744107]
-zoom = Vector2(1.5, 1.5)
+[node name="ItemSpawner" type="Node2D" parent="." unique_id=1337457238]
+position = Vector2(259, 71)
+script = ExtResource("4_i7141")
+items = Array[ExtResource("5_4mrxx")]([ExtResource("6_7r4gi"), ExtResource("7_w7kh3")])

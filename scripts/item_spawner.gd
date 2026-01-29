@@ -34,7 +34,7 @@ func _process(_delta: float) -> void:
 			if possible_items.is_empty():
 				print("empty")
 				return
-    
+	
 			var item_data = possible_items.pick_random()
 			var item_scene : GameItem = item_data.world_item_scene.instantiate()
 
