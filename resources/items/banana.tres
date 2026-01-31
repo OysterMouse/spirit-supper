@@ -12,5 +12,6 @@ script = ExtResource("1_1xm7w")
 item_name = "Banana"
 texture = SubResource("AtlasTexture_rsuuw")
 description = "Tasty banana"
+stack_size = 5
 is_tool = true
 metadata/_custom_type_script = "uid://m60fijagcay"

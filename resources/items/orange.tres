@@ -12,5 +12,5 @@ script = ExtResource("1_hupc6")
 item_name = "Orange"
 texture = SubResource("AtlasTexture_4u72g")
 description = "A delicious orange"
-stack_size = 2
+stack_size = 99
 metadata/_custom_type_script = "uid://m60fijagcay"

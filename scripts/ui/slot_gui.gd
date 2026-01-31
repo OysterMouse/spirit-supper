@@ -6,7 +6,7 @@ extends Panel
 @onready var quantity: Label = $CenterContainer/Panel/Quantity
 
 var slot_index : int
-var inventory : InventoryGUI
+var inventory  # Can be InventoryGUI or Hotbar - any object with request_swap()
 
 func _get_drag_data(at_position: Vector2):
 	
