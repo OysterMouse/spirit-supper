@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var state_machine = $StateMachine
 @onready var input_component: Node = $Components/InputComponent
 @onready var inventory: Inventory = $Inventory
-@onready var hotbar: Hotbar = $Hotbar
+@onready var hotbar: Hotbar = $CanvasLayer/Hotbar
 
 @export var move_speed: float = 75
 @export var max_health: int = 100

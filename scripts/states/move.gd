@@ -21,6 +21,4 @@ func process_physics(delta: float) -> State:
 
 	if parent.velocity == Vector2.ZERO:
 		return idle_state
-	#if Input.is_action_just_pressed("use_tool"):
-		#return attack_state
 	return null

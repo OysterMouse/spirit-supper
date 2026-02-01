@@ -1,7 +1,6 @@
 extends State
-
-@onready var hotbar: Hotbar = $"../../Hotbar"
-
+ 
+@onready var hotbar: Hotbar = $"../../CanvasLayer/Hotbar"
 
 @export var move_state: State
 @export var attack_state: State

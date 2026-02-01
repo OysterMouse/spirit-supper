@@ -3,7 +3,7 @@ extends MarginContainer
 
 @export var inventory: Inventory
 @export var hotbar_slots: int = 9
-
+@onready var player: Player = $"../.."
 @onready var slots_container: HBoxContainer = $HBoxContainer
 
 var slot_scene: PackedScene = preload("res://scenes/slot_gui.tscn")
@@ -107,9 +107,9 @@ func _update_equipped_tool():
 	# Update player's current_tool based on selected slot
 	var tool = get_selected_tool()
 	if tool:
-		get_parent().current_tool = tool.tool_type
+		player.current_tool = tool.tool_type
 	else:
-		get_parent().current_tool = DataTypes.Tools.NONE
+		player.current_tool = DataTypes.Tools.NONE
 
 # Required for SlotGUI compatibility
 func request_swap(from_index: int, to_index: int):

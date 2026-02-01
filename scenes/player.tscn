@@ -1775,15 +1775,11 @@ grow_horizontal = 2
 grow_vertical = 2
 inventory = NodePath("../Inventory")
 
-[node name="Hotbar" parent="." unique_id=1161711699 node_paths=PackedStringArray("inventory") instance=ExtResource("14_oprun")]
-anchors_preset = 12
-anchor_left = 0.0
-anchor_right = 1.0
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1582528280]
+
+[node name="Hotbar" parent="CanvasLayer" unique_id=1161711699 node_paths=PackedStringArray("inventory") instance=ExtResource("14_oprun")]
 size_flags_vertical = 8
-inventory = NodePath("../Inventory")
+inventory = NodePath("../../Inventory")
 
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/Attack" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/Chop" method="_on_animation_tree_animation_finished"]
