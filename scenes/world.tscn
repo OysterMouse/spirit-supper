@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://dctebfs1f6tqp" path="res://resources/items/banana.tres" id="6_7r4gi"]
 [ext_resource type="Resource" uid="uid://boc7rgloqrhwe" path="res://resources/items/orange.tres" id="7_w7kh3"]
 [ext_resource type="Resource" uid="uid://bvncoy7qeddvv" path="res://resources/tools/sword.tres" id="8_4mrxx"]
+[ext_resource type="Resource" uid="uid://do5gnmvuy2f8e" path="res://resources/tools/axe.tres" id="9_7r4gi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("2_rwgxs")
@@ -1389,6 +1390,8 @@ tile_set = SubResource("TileSet_k0juu")
 z_index = 1
 position = Vector2(166, 72)
 move_speed = 100.0
+health = 50
+stamina = 50
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=317909333]
 zoom = Vector2(2, 2)
@@ -1396,4 +1399,4 @@ zoom = Vector2(2, 2)
 [node name="ItemSpawner" type="Node2D" parent="." unique_id=1337457238]
 position = Vector2(259, 71)
 script = ExtResource("4_i7141")
-items = Array[ExtResource("5_4mrxx")]([ExtResource("6_7r4gi"), ExtResource("7_w7kh3"), ExtResource("8_4mrxx")])
+items = Array[ExtResource("5_4mrxx")]([ExtResource("6_7r4gi"), ExtResource("7_w7kh3"), ExtResource("8_4mrxx"), ExtResource("9_7r4gi")])

@@ -23,7 +23,7 @@ func exit() -> void:
 	input_pressed = false
 
 func process_input(event: InputEvent) -> State:
-	if event.is_action_pressed("use_tool"):
+	if event.is_action_pressed("use"):
 		input_pressed = true
 	return null
 

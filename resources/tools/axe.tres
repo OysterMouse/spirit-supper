@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ToolData" format=3 uid="uid://do5gnmvuy2f8e"]
+
+[ext_resource type="Script" uid="uid://cwhsooot5e3wx" path="res://scripts/tools/tool_data.gd" id="1_o1xek"]
+[ext_resource type="Texture2D" uid="uid://dogqvgvwh3kqo" path="res://assets/1.png" id="2_dkv6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6t0y"]
+atlas = ExtResource("2_dkv6c")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_o1xek")
+damage = 5
+tool_type = 1
+item_name = "Wooden Axe"
+texture = SubResource("AtlasTexture_t6t0y")
+description = "Cut wood with wood!"
+is_tool = true
+metadata/_custom_type_script = "uid://cwhsooot5e3wx"

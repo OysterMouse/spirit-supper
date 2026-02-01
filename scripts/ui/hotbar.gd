@@ -45,8 +45,19 @@ func _on_inventory_changed():
 		else:
 			slot_guis[i].icon.visible = false
 			slot_guis[i].quantity.visible = false
+	
+	# Update equipped tool if the currently selected slot changed
+	_update_equipped_tool()
 
 func _input(event: InputEvent):
+	# Mouse wheel to cycle through hotbar slots
+	if event is InputEventMouseButton:
+		if event.pressed:
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+				select_slot((selected_index - 1 + hotbar_slots) % hotbar_slots)
+			elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+				select_slot((selected_index + 1) % hotbar_slots)
+	
 	# Number keys 1-9 to select hotbar slots
 	if event.is_action_pressed("hotbar_1"):
 		select_slot(0)
@@ -71,6 +82,7 @@ func select_slot(index: int):
 	if index >= 0 and index < hotbar_slots:
 		selected_index = index
 		_update_selection()
+		_update_equipped_tool()
 
 func _update_selection():
 	# Visual feedback for selected slot
@@ -88,10 +100,16 @@ func get_selected_item() -> ItemData:
 func get_selected_tool() -> ToolData:
 	var item = get_selected_item()
 	if item is ToolData:
-		get_parent().current_tool = item.tool_type
-		print("Equipped tool type:", get_parent().current_tool)
 		return item
 	return null
+
+func _update_equipped_tool():
+	# Update player's current_tool based on selected slot
+	var tool = get_selected_tool()
+	if tool:
+		get_parent().current_tool = tool.tool_type
+	else:
+		get_parent().current_tool = DataTypes.Tools.NONE
 
 # Required for SlotGUI compatibility
 func request_swap(from_index: int, to_index: int):

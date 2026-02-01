@@ -10,3 +10,10 @@ enum Tools{
 	HOE,
 	POLE
 }
+
+enum ItemType{
+	NONE,
+	CONSUMABLE,
+	MATERIAL,
+	QUEST
+}

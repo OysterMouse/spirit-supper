@@ -8,6 +8,10 @@ extends CharacterBody2D
 @onready var hotbar: Hotbar = $Hotbar
 
 @export var move_speed: float = 75
+@export var max_health: int = 100
+@export var max_stamina: int = 100
+@export var health: int = 100
+@export var stamina: int = 100
 
 var playback: AnimationNodeStateMachinePlayback
 var direction: Vector2
@@ -31,6 +35,7 @@ func _physics_process(delta: float) -> void:
 
 func _process(delta: float) -> void:
 	get_equipped_tool()
+	hotbar.get_selected_item()
 	state_machine.process_frame(delta)
 
 func update_animation_params():
@@ -49,3 +54,11 @@ func get_equipped_tool() -> ToolData:
 	if hotbar:
 		return hotbar.get_selected_tool()
 	return null
+
+func heal(amount: int) -> void:
+	health = min(health + amount, max_health)
+	print("Healed for ", amount, ". Current health: ", health)
+
+func restore_stamina(amount: int) -> void:
+	stamina = min(stamina + amount, max_stamina)
+	print("Restored ", amount, " stamina. Current stamina: ", stamina)

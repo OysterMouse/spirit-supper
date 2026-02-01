@@ -1728,10 +1728,11 @@ parameters/Walk/blend_position = Vector2(0, 0)
 script = ExtResource("5_tuyoq")
 starting_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachine" unique_id=57305712 node_paths=PackedStringArray("move_state", "attack_state")]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=57305712 node_paths=PackedStringArray("move_state", "attack_state", "chop_state")]
 script = ExtResource("6_fjrip")
 move_state = NodePath("../Move")
 attack_state = NodePath("../Attack")
+chop_state = NodePath("../Chop")
 animation_name = "Idle"
 
 [node name="Move" type="Node" parent="StateMachine" unique_id=1879506503 node_paths=PackedStringArray("idle_state", "attack_state")]

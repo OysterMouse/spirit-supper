@@ -11,11 +11,6 @@ func setup(_data : ItemData):
 	$Item.texture = data.texture
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player") and data.is_tool:
+	if body.is_in_group("player"):
 		body.pickup_item(data)
-		print("Equipped: ", data.item_name)
-		queue_free()
-	else:
-		body.pickup_item(data)
-		print("Picked up: ", data.item_name)
 		queue_free()

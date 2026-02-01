@@ -16,7 +16,7 @@ func _resize_inventory() -> void:
 		# Expand: add null slots
 		for i in range(size - old_size):
 			slots.append(null)
-	elif old_size > size:
+	elif old_size > size: 
 		# Shrink: remove excess slots (keep items if possible)
 		slots.resize(size)
 
@@ -78,3 +78,13 @@ func swap_slots(a: int, b: int):
 	slots[a] = slot_b
 	slots[b] = slot_a
 	changed.emit()
+
+func consume_item(slot_index: int, amount: int = 1):
+	if slot_index >= 0 and slot_index < slots.size() and slots[slot_index]:
+		var slot = slots[slot_index]
+		slot.quantity -= amount
+		
+		if slot.quantity <= 0:
+			slots[slot_index] = null
+		
+		changed.emit()
