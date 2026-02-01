@@ -15,7 +15,7 @@ func process_input(event: InputEvent) -> State:
 		return move_state
 	
 	# Check for item usage first
-	if Input.is_action_just_pressed("use"):
+	if input_component.get_use_input():
 		if use_item():
 			return null  # Stay in idle after using item
 	
@@ -28,10 +28,10 @@ func process_physics(delta: float) -> State:
 func use_equipped_tool() -> State:
 	match parent.current_tool:
 		DataTypes.Tools.SWORD:
-			if Input.is_action_just_pressed("use"):
+			if input_component.get_use_input():
 				return attack_state
 		DataTypes.Tools.AXE:
-			if Input.is_action_just_pressed("use"):
+			if input_component.get_use_input():
 				return chop_state
 	return null
 

@@ -1735,10 +1735,11 @@ attack_state = NodePath("../Attack")
 chop_state = NodePath("../Chop")
 animation_name = "Idle"
 
-[node name="Move" type="Node" parent="StateMachine" unique_id=1879506503 node_paths=PackedStringArray("idle_state", "attack_state")]
+[node name="Move" type="Node" parent="StateMachine" unique_id=1879506503 node_paths=PackedStringArray("idle_state", "attack_state", "chop_state")]
 script = ExtResource("7_smehm")
 idle_state = NodePath("../Idle")
 attack_state = NodePath("../Attack")
+chop_state = NodePath("../Chop")
 animation_name = "Walk"
 
 [node name="Attack" type="Node" parent="StateMachine" unique_id=62045827 node_paths=PackedStringArray("idle_state", "move_state")]
