@@ -98,9 +98,9 @@ func get_selected_item() -> ItemData:
 	return null
 
 func get_selected_tool() -> ToolData:
-	var item = get_selected_item()
-	if item is ToolData:
-		return item
+	var tool = get_selected_item()
+	if tool is ToolData:
+		return tool
 	return null
 
 func _update_equipped_tool():

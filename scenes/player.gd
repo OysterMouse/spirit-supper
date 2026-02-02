@@ -17,6 +17,7 @@ var playback: AnimationNodeStateMachinePlayback
 var direction: Vector2
 var last_direction: Vector2 = Vector2.RIGHT
 var current_tool: DataTypes.Tools = DataTypes.Tools.NONE
+var equipped_tool_data: ToolData = null  # Cache the current tool data
 
 func _ready() -> void:
 	playback = animations["parameters/playback"]
@@ -34,8 +35,9 @@ func _physics_process(delta: float) -> void:
 	state_machine.process_physics(delta)
 
 func _process(delta: float) -> void:
-	get_equipped_tool()
-	hotbar.get_selected_item()
+	equipped_tool_data = get_equipped_tool()  # Update cached tool data
+	if hotbar:
+		hotbar.get_selected_item()
 	state_machine.process_frame(delta)
 
 func update_animation_params():

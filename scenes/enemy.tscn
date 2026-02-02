@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cgevcuagfdd4v"]
+
+[ext_resource type="Script" uid="uid://dmaha38822nyn" path="res://scripts/enemy/enemy.gd" id="1_md0e3"]
+[ext_resource type="PackedScene" uid="uid://ddw6mkb8reaja" path="res://scenes/hurt_component.tscn" id="2_4ra3w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c4w8v"]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=875032184]
+script = ExtResource("1_md0e3")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=861128303]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1404582488]
+shape = SubResource("CircleShape2D_5uy6h")
+
+[node name="HurtComponent" parent="." unique_id=1234258498 instance=ExtResource("2_4ra3w")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=393737514]
+shape = SubResource("CircleShape2D_c4w8v")

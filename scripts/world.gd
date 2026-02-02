@@ -3,6 +3,7 @@ extends Node2D
 var item_orange : ItemData = preload("res://resources/items/orange.tres")
 var item_banana : ItemData = preload("res://resources/items/banana.tres")
 var item_sword: ToolData = preload("res://resources/tools/sword.tres")
+var enemy_blob: EnemyData = preload("res://resources/enemies/blob.tres")
 
 func _ready() -> void:
 	var orange : GameItem = item_orange.world_item_scene.instantiate()
@@ -16,3 +17,9 @@ func _ready() -> void:
 	sword.global_position = Vector2(220, 120)
 	sword.z_index = 1
 	add_child(sword)
+	
+	var blob: Enemy = enemy_blob.world_enemy_scene.instantiate()
+	blob.setup(enemy_blob)
+	blob.global_position = Vector2(320, 120)
+	blob.z_index = 1
+	add_child(blob)
