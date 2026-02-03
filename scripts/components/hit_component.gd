@@ -8,7 +8,7 @@ var tool_name: String = ""
 signal hit_hurtbox(hurtbox: HurtComponent)
 
 func _ready() -> void:
-	area_entered.connect(_on_area_entered)
+	#area_entered.connect(_on_area_entered)
 	monitoring = false  # Start disabled
 
 func set_tool_data(tool_data: ToolData) -> void:
