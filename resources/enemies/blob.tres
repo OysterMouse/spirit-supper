@@ -14,5 +14,6 @@ enemy_name = "Blob"
 health = 50
 texture = SubResource("AtlasTexture_a3w2b")
 speed = 40.0
+range = 100.0
 follow_player = true
 metadata/_custom_type_script = "uid://5ttegi2tg2om"

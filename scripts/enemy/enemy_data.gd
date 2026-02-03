@@ -5,6 +5,7 @@ extends Resource
 @export var health: int = 10
 @export var texture: Texture2D
 @export var speed: float
+@export var range: float
 @export var description: String = ""
 @export var world_enemy_scene : PackedScene = preload("res://scenes/enemy.tscn")
 @export var follow_player: bool

@@ -54,6 +54,9 @@ func follow_player() -> void:
 		return
 	if not player:
 		return
-		
+	
 	var direction = (player.position - position).normalized()
-	velocity = direction * data.speed
+	if position.distance_to(player.position) < data.range:
+		velocity = direction * data.speed
+	else:
+		velocity = Vector2.ZERO
