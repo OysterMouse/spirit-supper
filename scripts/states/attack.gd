@@ -73,4 +73,4 @@ func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 		is_using = false
 
 func _on_hit_hurtbox(hurtbox: HurtComponent) -> void:
-	print("hit")
+	pass

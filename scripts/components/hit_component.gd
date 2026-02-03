@@ -14,6 +14,7 @@ func _ready() -> void:
 func set_tool_data(tool_data: ToolData) -> void:
 	damage = tool_data.damage
 	tool_type = tool_data.tool_type
+	tool_name = tool_data.item_name
 
 func enable_and_check() -> void:
 	monitoring = true
@@ -27,4 +28,4 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is HurtComponent:
 		area.take_damage(damage, tool_type)
 		hit_hurtbox.emit(area)
-		print("Hit with: ", DataTypes.Tools.keys()[tool_type], " for: ", damage)
+		print("Hit with: ", tool_name, " (", DataTypes.Tools.keys()[tool_type], ") for ", damage, " damage")
