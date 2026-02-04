@@ -22,7 +22,8 @@ func _ready() -> void:
 		_setup_collision_shapes()
 
 func setup(_data: EnemyData) -> void:
-	data = _data
+	# Duplicate the resource so each enemy has its own stats
+	data = _data.duplicate()
 	$Sprite.texture = _data.texture
 	
 	# Setup collision shapes if _ready has already been called

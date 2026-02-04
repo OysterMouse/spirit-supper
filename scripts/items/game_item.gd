@@ -7,7 +7,7 @@ func _ready() -> void:
 	z_index = 100
 
 func setup(_data : ItemData):
-	data = _data
+	data = _data.duplicate()
 	$Item.texture = data.texture
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

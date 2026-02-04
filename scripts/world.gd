@@ -23,7 +23,7 @@ func _ready() -> void:
 	blob.global_position = Vector2(320, 220)
 	blob.z_index = 1
 	add_child(blob)
-	
+	 
 	var blob2: Enemy = enemy_blob.world_enemy_scene.instantiate()
 	blob2.setup(enemy_blob)
 	blob2.global_position = Vector2(120, 320)

@@ -960,6 +960,30 @@ tracks/1/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitComponent/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitComponent/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_ur7pv"]
 resource_name = "attack_east_1"
@@ -988,6 +1012,30 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitComponent/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitComponent/CollisionShape2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(16, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_jej6c"]
@@ -1701,8 +1749,8 @@ states/Idle/position = Vector2(364, 63)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_qfm1y")
 states/Walk/position = Vector2(476, 75)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_a8ls1"]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oprun"]
+size = Vector2(6, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=2113674106 groups=["player"]]
 script = ExtResource("1_qlg0r")
@@ -1783,7 +1831,8 @@ inventory = NodePath("../Inventory")
 [node name="HitComponent" parent="." unique_id=1467211559 instance=ExtResource("12_oprun")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitComponent" unique_id=1400609836]
-shape = SubResource("CircleShape2D_a8ls1")
+shape = SubResource("RectangleShape2D_oprun")
+disabled = true
 debug_color = Color(0.83859545, 0.0011986482, 0.9276236, 0.41960785)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1582528280]
