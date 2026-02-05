@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://by6hdb2k4ajvc" path="res://scripts/enemy/enemy_spawner.gd" id="12_o8fc1"]
 [ext_resource type="Script" uid="uid://5ttegi2tg2om" path="res://scripts/enemy/enemy_data.gd" id="13_xo05s"]
 [ext_resource type="Resource" uid="uid://68phj0tu3kfv" path="res://resources/enemies/blob.tres" id="14_dss4m"]
+[ext_resource type="Texture2D" uid="uid://0e5fp753lppg" path="res://assets/cabin.png" id="15_xo05s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("2_rwgxs")
@@ -1423,5 +1424,9 @@ position = Vector2(3, -32)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cabin/Area2D" unique_id=342440586]
 position = Vector2(-19, 44)
 shape = SubResource("RectangleShape2D_w7kh3")
+
+[node name="Cabin2" type="Sprite2D" parent="." unique_id=662711798]
+position = Vector2(338, 72)
+texture = ExtResource("15_xo05s")
 
 [connection signal="body_entered" from="Cabin/Area2D" to="Cabin" method="_on_area_2d_body_entered"]

@@ -1,19 +1,19 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://68phj0tu3kfv"]
 
 [ext_resource type="Script" uid="uid://5ttegi2tg2om" path="res://scripts/enemy/enemy_data.gd" id="1_m8whk"]
-[ext_resource type="Texture2D" uid="uid://bn74equklqhku" path="res://assets/Icons.png" id="2_csnsl"]
+[ext_resource type="SpriteFrames" uid="uid://bau1wreagttsb" path="res://resources/enemies/animations/blob_sprite_frames.tres" id="2_csnsl"]
 [ext_resource type="PackedScene" uid="uid://cgevcuagfdd4v" path="res://scenes/enemy.tscn" id="3_1lwhe"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a3w2b"]
-atlas = ExtResource("2_csnsl")
-region = Rect2(48, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_m8whk")
 enemy_name = "Blob"
 health = 50
-texture = SubResource("AtlasTexture_a3w2b")
+sprite_frames = ExtResource("2_csnsl")
 speed = 40.0
 range = 100.0
-follow_player = true
+idle_anim = "idle"
+walk_anim = "walk"
+attack_anim = ""
+hit_anim = "hit"
+death_anim = "death"
 metadata/_custom_type_script = "uid://5ttegi2tg2om"
