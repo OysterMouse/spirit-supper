@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://boc7rgloqrhwe" path="res://resources/items/orange.tres" id="7_w7kh3"]
 [ext_resource type="Resource" uid="uid://bvncoy7qeddvv" path="res://resources/tools/sword.tres" id="8_4mrxx"]
 [ext_resource type="Resource" uid="uid://do5gnmvuy2f8e" path="res://resources/tools/axe.tres" id="9_7r4gi"]
-[ext_resource type="Texture2D" uid="uid://0e5fp753lppg" path="res://assets/cabin.png" id="10_w7kh3"]
+[ext_resource type="Texture2D" uid="uid://cy5mxhcpobt27" path="res://assets/cabin_v2.png" id="10_e3hyu"]
 [ext_resource type="Script" uid="uid://cdo7ctximnkqh" path="res://scripts/cabin.gd" id="11_e3hyu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
@@ -1394,7 +1394,7 @@ tile_set = SubResource("TileSet_k0juu")
 [node name="Player" parent="." unique_id=1730374081 instance=ExtResource("1_nnsk1")]
 z_index = 1
 position = Vector2(166, 72)
-move_speed = 100.0
+move_speed = 125.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=317909333]
 zoom = Vector2(2, 2)
@@ -1406,10 +1406,12 @@ items = Array[ExtResource("5_4mrxx")]([ExtResource("6_7r4gi"), ExtResource("7_w7
 
 [node name="Cabin" type="Sprite2D" parent="." unique_id=799259922]
 position = Vector2(164, 1)
-texture = ExtResource("10_w7kh3")
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("10_e3hyu")
 script = ExtResource("11_e3hyu")
 
 [node name="Area2D" type="Area2D" parent="Cabin" unique_id=753050620]
+position = Vector2(3, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cabin/Area2D" unique_id=342440586]
 position = Vector2(-19, 44)

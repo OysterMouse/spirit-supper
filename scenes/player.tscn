@@ -934,6 +934,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vyb7"]
 radius = 4.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oprun"]
+size = Vector2(4, 21)
+
 [sub_resource type="Animation" id="Animation_bpsgo"]
 length = 0.001
 tracks/0/type = "value"
@@ -984,6 +987,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitComponent/CollisionShape2D:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_oprun")]
+}
 
 [sub_resource type="Animation" id="Animation_ur7pv"]
 resource_name = "attack_east_1"
@@ -1020,10 +1035,10 @@ tracks/2/path = NodePath("HitComponent/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.15),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.232),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, false, true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -1036,6 +1051,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [Vector2(0, 0), Vector2(16, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitComponent/CollisionShape2D:shape")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_oprun")]
 }
 
 [sub_resource type="Animation" id="Animation_jej6c"]
@@ -1095,6 +1122,42 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitComponent/CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.232),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_oprun"), SubResource("RectangleShape2D_oprun"), SubResource("RectangleShape2D_oprun")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitComponent/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.232),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitComponent/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, -13)]
+}
 
 [sub_resource type="Animation" id="Animation_f1ej7"]
 resource_name = "attack_north_2"
@@ -1153,6 +1216,42 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitComponent/CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_oprun")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitComponent/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.232),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitComponent/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, 0), Vector2(0, 12)]
+}
 
 [sub_resource type="Animation" id="Animation_oprun"]
 resource_name = "attack_south_2"
@@ -1210,6 +1309,42 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HitComponent/CollisionShape2D:shape")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("RectangleShape2D_oprun")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HitComponent/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.232),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitComponent/CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, 12), Vector2(-16, -1)]
 }
 
 [sub_resource type="Animation" id="Animation_gvmy4"]
@@ -1748,9 +1883,6 @@ states/Idle/node = SubResource("AnimationNodeBlendSpace2D_3v2ag")
 states/Idle/position = Vector2(364, 63)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_qfm1y")
 states/Walk/position = Vector2(476, 75)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oprun"]
-size = Vector2(6, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=2113674106 groups=["player"]]
 script = ExtResource("1_qlg0r")
