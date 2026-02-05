@@ -11,6 +11,9 @@
 [ext_resource type="Resource" uid="uid://do5gnmvuy2f8e" path="res://resources/tools/axe.tres" id="9_7r4gi"]
 [ext_resource type="Texture2D" uid="uid://cy5mxhcpobt27" path="res://assets/cabin_v2.png" id="10_e3hyu"]
 [ext_resource type="Script" uid="uid://cdo7ctximnkqh" path="res://scripts/cabin.gd" id="11_e3hyu"]
+[ext_resource type="Script" uid="uid://by6hdb2k4ajvc" path="res://scripts/enemy/enemy_spawner.gd" id="12_o8fc1"]
+[ext_resource type="Script" uid="uid://5ttegi2tg2om" path="res://scripts/enemy/enemy_data.gd" id="13_xo05s"]
+[ext_resource type="Resource" uid="uid://68phj0tu3kfv" path="res://resources/enemies/blob.tres" id="14_dss4m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wyf3"]
 texture = ExtResource("2_rwgxs")
@@ -1398,6 +1401,10 @@ move_speed = 125.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=317909333]
 zoom = Vector2(2, 2)
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=160181410]
+script = ExtResource("12_o8fc1")
+enemies = Array[ExtResource("13_xo05s")]([ExtResource("14_dss4m")])
 
 [node name="ItemSpawner" type="Node2D" parent="." unique_id=1337457238]
 position = Vector2(259, 71)

@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 		var item_scene : GameItem = random_item.world_item_scene.instantiate()
 		var mouse_pos : Vector2 = camera_2d.get_global_mouse_position()
 		
-		if Input.is_action_just_pressed("spawn"):
+		if Input.is_action_just_pressed("spawn_item"):
 			
 			get_parent().call_deferred("add_child", item_scene)
 			await get_tree().process_frame

@@ -17,27 +17,3 @@ func _ready() -> void:
 	sword.global_position = Vector2(220, 120)
 	sword.z_index = 1
 	add_child(sword)
-	
-	var blob: Enemy = enemy_blob.world_enemy_scene.instantiate()
-	blob.setup(enemy_blob)
-	blob.global_position = Vector2(320, 220)
-	blob.z_index = 1
-	add_child(blob)
-	 
-	var blob2: Enemy = enemy_blob.world_enemy_scene.instantiate()
-	blob2.setup(enemy_blob)
-	blob2.global_position = Vector2(120, 320)
-	blob2.z_index = 1
-	add_child(blob2)
-	
-	var blob3: Enemy = enemy_blob.world_enemy_scene.instantiate()
-	blob3.setup(enemy_blob)
-	blob3.global_position = Vector2(420, 320)
-	blob3.z_index = 1
-	add_child(blob3)
-	
-	var blob4: Enemy = enemy_blob.world_enemy_scene.instantiate()
-	blob4.setup(enemy_blob)
-	blob4.global_position = Vector2(320, 120)
-	blob4.z_index = 1
-	add_child(blob4)
