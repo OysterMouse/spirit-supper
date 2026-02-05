@@ -7,12 +7,17 @@ extends CharacterBody2D
 
 var player: Player
 var data : EnemyData
+var playback : AnimationNodeStateMachinePlayback
+@onready var animation_tree: AnimationTree = $AnimationTree
 
 func _ready() -> void:
 	# Find the player in the scene
 	player = get_tree().get_first_node_in_group("player")
 	if not player:
 		print("ERROR: Player not found!")
+	
+	# Initialize animation playback
+	playback = animation_tree.get("parameters/playback")
 	
 	# Connect signals
 	hurt_component.damage_received.connect(_on_damage_received)
@@ -44,6 +49,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
 	data.health -= amount
+	playback.travel("hit")
+	await get_tree().create_timer(0.15).timeout
+	playback.travel("Start")
 	
 	if data.health <= 0:
 		queue_free()
