@@ -6,12 +6,16 @@ func enter() -> void:
 	var enemy: Enemy = parent as Enemy
 	animation_name = enemy.data.idle_anim
 	super()
+	
+	# Keep facing last direction when idle
+	enemy.set_blend_position(animation_name, enemy.last_direction)
 
 func process_physics(delta: float) -> State:
 	var enemy: Enemy = parent as Enemy
 	
 	# Stand still
 	enemy.velocity = Vector2.ZERO
+	enemy.direction = Vector2.ZERO
 	
 	# Check if player is in detection range
 	if enemy.player:

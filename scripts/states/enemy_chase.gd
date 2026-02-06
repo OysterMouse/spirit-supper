@@ -27,5 +27,13 @@ func process_physics(delta: float) -> State:
 	# Chase player
 	var direction = (enemy.player.position - enemy.position).normalized()
 	enemy.velocity = direction * enemy.data.speed
+	enemy.direction = direction
+	
+	# Update blend position for directional animation
+	enemy.set_blend_position(animation_name, direction)
+	
+	# Track last direction for idle state
+	if direction.length() > 0.1:
+		enemy.last_direction = direction
 	
 	return null

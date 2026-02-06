@@ -6,11 +6,16 @@ extends CharacterBody2D
 @onready var hurt_collision_shape_2d: CollisionShape2D = $HurtComponent/CollisionShape2D
 @onready var state_machine: Node = $StateMachine
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite
+@onready var animation_tree: AnimationTree = $AnimationTree
+
+@export var hit_state: State
+@export var death_state: State
 
 var player: Player
 var data : EnemyData
 var playback : AnimationNodeStateMachinePlayback
-@onready var animation_tree: AnimationTree = $AnimationTree
+var direction: Vector2 = Vector2.ZERO
+var last_direction: Vector2 = Vector2.DOWN  # Default facing down
 
 func _ready() -> void:
 	# Find the player in the scene
@@ -63,15 +68,29 @@ func _setup_collision_shapes() -> void:
 func _physics_process(delta: float) -> void:
 	if state_machine:
 		state_machine.process_physics(delta)
-	move_and_slide()
+		move_and_slide()
+	
 
 func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
 	data.health -= amount
-	playback.travel(data.hit_anim)
-	if data.health <= 0:
-		playback.travel(data.death_anim)
-		await get_tree().create_timer(1).timeout
-		queue_free()
 	
 	if data.health <= 0:
-		queue_free()
+		# Transition to death state
+		if death_state:
+			state_machine.change_state(death_state)
+	else:
+		# Transition to hit state
+		if hit_state:
+			state_machine.change_state(hit_state)
+		
+
+func set_blend_position(state_name: String, direction: Vector2) -> void:
+	animation_tree.set("parameters/" + state_name + "/blend_position", direction)
+
+#func update_animation_params():
+	#if direction == Vector2.ZERO:
+		#return
+	#animation_tree["parameters/Idle/blend_position"] = direction
+	#animation_tree["parameters/Walk/blend_position"] = direction
+	#animation_tree["parameters/Hit/blend_position"] = direction
+	#animation_tree["parameters/Death/blend_position"] = direction

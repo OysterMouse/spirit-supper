@@ -5,6 +5,7 @@ extends State
 
 func enter() -> void:
 	animation_name = parent.data.walk_anim
+	use_blend_space = true
 	super()
 
 func process_physics(delta: float) -> State:
@@ -26,5 +27,8 @@ func process_physics(delta: float) -> State:
 	# Chase player
 	var direction = (enemy.player.position - enemy.position).normalized()
 	enemy.velocity = direction * enemy.data.speed
+	
+	if use_blend_space:
+		enemy.set_blend_position(animation_name, direction)
 	
 	return null
