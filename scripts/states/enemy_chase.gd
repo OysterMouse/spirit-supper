@@ -5,7 +5,7 @@ extends State
 
 func enter() -> void:
 	var enemy: Enemy = parent as Enemy
-	animation_name = enemy.data.walk_anim
+	#animation_name = enemy.data.walk_anim
 	super()
 
 func process_physics(delta: float) -> State:

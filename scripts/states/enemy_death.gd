@@ -7,7 +7,7 @@ var cleanup_done: bool = false
 
 func enter() -> void:
 	var enemy: Enemy = parent as Enemy
-	animation_name = enemy.data.death_anim
+	#animation_name = enemy.data.death_anim
 	super()  # Just travel to animation - blend position updates automatically
 	
 	# Stop all movement

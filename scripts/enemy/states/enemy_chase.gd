@@ -4,8 +4,8 @@ extends State
 #@export var attack_state: State
 
 func enter() -> void:
-	animation_name = parent.data.walk_anim
-	use_blend_space = true
+	#animation_name = parent.data.walk_anim
+	#use_blend_space = true
 	super()
 
 func process_physics(delta: float) -> State:

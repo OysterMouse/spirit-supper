@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ddw6mkb8reaja" path="res://scenes/hurt_component.tscn" id="2_4ra3w"]
 [ext_resource type="SpriteFrames" uid="uid://bau1wreagttsb" path="res://resources/enemies/animations/blob_sprite_frames.tres" id="2_5uy6h"]
 [ext_resource type="Script" uid="uid://d050vuve86j75" path="res://scripts/state_machine.gd" id="3_4ra3w"]
-[ext_resource type="Script" uid="uid://da7bs4qbjlsac" path="res://scripts/enemy/states/enemy_idle.gd" id="5_c4w8v"]
-[ext_resource type="Script" uid="uid://djfrnvc1thwq2" path="res://scripts/enemy/states/enemy_chase.gd" id="6_xwavj"]
+[ext_resource type="Script" uid="uid://dsu8ff3afpvgm" path="res://scripts/states/enemy_idle.gd" id="5_md484"]
+[ext_resource type="Script" uid="uid://bbchd2ji1omp3" path="res://scripts/states/enemy_chase.gd" id="6_md484"]
 [ext_resource type="Script" uid="uid://blbrjcgnr1xqp" path="res://scripts/states/enemy_hit.gd" id="7_md484"]
 [ext_resource type="Script" uid="uid://c15k37mm2vpq2" path="res://scripts/states/enemy_death.gd" id="8_ipns3"]
 
@@ -617,14 +617,14 @@ blend_point_3/pos = Vector2(0, -1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4ra3w"]
-states/death/node = SubResource("AnimationNodeBlendSpace2D_j0cyh")
-states/death/position = Vector2(749.2, 93.6)
-states/hit/node = SubResource("AnimationNodeBlendSpace2D_1x4g4")
-states/hit/position = Vector2(611.6, 87.2)
-states/idle/node = SubResource("AnimationNodeBlendSpace2D_wjec0")
-states/idle/position = Vector2(363.6, 87.68)
-states/walk/node = SubResource("AnimationNodeBlendSpace2D_1f82d")
-states/walk/position = Vector2(480.4, 85.663994)
+states/Death/node = SubResource("AnimationNodeBlendSpace2D_j0cyh")
+states/Death/position = Vector2(749.2, 93.6)
+states/Hit/node = SubResource("AnimationNodeBlendSpace2D_1x4g4")
+states/Hit/position = Vector2(611.6, 87.2)
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_wjec0")
+states/Idle/position = Vector2(363.6, 87.68)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_1f82d")
+states/Walk/position = Vector2(480.4, 85.663994)
 graph_offset = Vector2(53, 10)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=875032184 node_paths=PackedStringArray("hit_state", "death_state")]
@@ -652,31 +652,30 @@ libraries/ = SubResource("AnimationLibrary_5uy6h")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1169697760]
 tree_root = SubResource("AnimationNodeStateMachine_4ra3w")
 anim_player = NodePath("../AnimationPlayer")
-parameters/death/blend_position = Vector2(0, 0)
-parameters/hit/blend_position = Vector2(0, 0)
-parameters/idle/blend_position = Vector2(0, 0)
-parameters/walk/blend_position = Vector2(0, 0)
+parameters/Death/blend_position = Vector2(0, 0)
+parameters/Hit/blend_position = Vector2(0, 0)
+parameters/Idle/blend_position = Vector2(0, 0)
+parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="StateMachine" type="Node" parent="." unique_id=489795680 node_paths=PackedStringArray("starting_state")]
 script = ExtResource("3_4ra3w")
 starting_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine" unique_id=537604102 node_paths=PackedStringArray("chase_state")]
-script = ExtResource("5_c4w8v")
+script = ExtResource("5_md484")
 chase_state = NodePath("../Chase")
-use_blend_space = true
+animation_name = "Idle"
 
 [node name="Chase" type="Node" parent="StateMachine" unique_id=657158388 node_paths=PackedStringArray("idle_state")]
-script = ExtResource("6_xwavj")
+script = ExtResource("6_md484")
 idle_state = NodePath("../Idle")
-animation_name = "walk"
-use_blend_space = true
+animation_name = "Walk"
 
 [node name="Hit" type="Node" parent="StateMachine" unique_id=416578394 node_paths=PackedStringArray("idle_state")]
 script = ExtResource("7_md484")
 idle_state = NodePath("../Idle")
-use_blend_space = true
+animation_name = "Hit"
 
 [node name="Death" type="Node" parent="StateMachine" unique_id=1277132778]
 script = ExtResource("8_ipns3")
-use_blend_space = true
+animation_name = "Death"

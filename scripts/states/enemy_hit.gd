@@ -7,7 +7,7 @@ var hit_timer: float = 0.0
 
 func enter() -> void:
 	var enemy: Enemy = parent as Enemy
-	animation_name = enemy.data.hit_anim
+	#animation_name = enemy.data.hit_anim
 	super()  # Just travel to animation - blend position updates automatically
 	
 	# Stop movement during hit

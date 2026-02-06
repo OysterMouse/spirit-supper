@@ -90,17 +90,14 @@ func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
 			state_machine.change_state(hit_state)
 		
 
-func set_blend_position(state_name: String, direction: Vector2) -> void:
-	animation_tree.set("parameters/" + state_name + "/blend_position", direction)
-
 func update_animation_params():
-	# Use last_direction for blend position (updated when moving)
-	if direction == Vector2.ZERO:
+	# Check if enemy data is loaded
+	if not data:
 		return
-	animation_tree["parameters/" + data.idle_anim + "/blend_position"] = direction
-	animation_tree["parameters/" + data.walk_anim + "/blend_position"] = direction
-	animation_tree["parameters/" + data.hit_anim + "/blend_position"] = direction
-	animation_tree["parameters/" + data.death_anim + "/blend_position"] = direction
-	#animation_tree["parameters/Walk/blend_position"] = direction
-	#animation_tree["parameters/Hit/blend_position"] = direction
-	#animation_tree["parameters/Death/blend_position"] = direction
+	# Use last_direction for blend position (updated when moving)
+	if last_direction == Vector2.ZERO:
+		return
+	animation_tree["parameters/" + data.idle_anim + "/blend_position"] = last_direction
+	animation_tree["parameters/" + data.walk_anim + "/blend_position"] = last_direction
+	animation_tree["parameters/" + data.hit_anim + "/blend_position"] = last_direction
+	animation_tree["parameters/" + data.death_anim + "/blend_position"] = last_direction

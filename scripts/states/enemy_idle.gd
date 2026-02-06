@@ -4,7 +4,7 @@ extends State
 
 func enter() -> void:
 	var enemy: Enemy = parent as Enemy
-	animation_name = enemy.data.idle_anim
+	#animation_name = enemy.data.idle_anim
 	super()  # Just travel to animation - blend position updates automatically
 
 func process_physics(delta: float) -> State:

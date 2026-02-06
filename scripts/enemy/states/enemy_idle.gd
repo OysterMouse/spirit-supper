@@ -5,7 +5,7 @@ extends State
 var player : Player
 func enter() -> void:
 	var enemy: Enemy = parent as Enemy
-	animation_name = enemy.data.idle_anim
+	#animation_name = enemy.data.idle_anim
 	player = get_tree().get_first_node_in_group("player")
 	super()
 
