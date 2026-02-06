@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://1kaka7eqxgwb"]
+
+[ext_resource type="Script" uid="uid://5ttegi2tg2om" path="res://scripts/enemy/enemy_data.gd" id="1_01p7b"]
+[ext_resource type="PackedScene" uid="uid://cgevcuagfdd4v" path="res://scenes/enemy.tscn" id="2_5qur1"]
+[ext_resource type="SpriteFrames" uid="uid://r5rtqv2sj1g3" path="res://resources/enemies/animations/blue_slime_frames.tres" id="2_u2ybk"]
+
+[resource]
+script = ExtResource("1_01p7b")
+enemy_name = "Blue Slime"
+sprite_frames = ExtResource("2_u2ybk")
+speed = 60.0
+range = 80.0
+idle_anim = "idle"
+walk_anim = "walk"
+attack_anim = "attack"
+hit_anim = "hit"
+death_anim = "death"
+collision_shape_size = Vector2(4, 4)
+hurtbox_shape_size = Vector2(8, 8)
+metadata/_custom_type_script = "uid://5ttegi2tg2om"

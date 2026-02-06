@@ -25,3 +25,10 @@ extends Resource
 @export var attack_cooldown: float = 1.0
 @export var can_attack: bool = false
 @export var attack_damage: int = 5
+
+# Collision Configuration
+@export_group("Collision")
+@export var collision_shape_size: Vector2 = Vector2(32, 32)
+@export var collision_shape_offset: Vector2 = Vector2.ZERO
+@export var hurtbox_shape_size: Vector2 = Vector2(32, 32)
+@export var hurtbox_shape_offset: Vector2 = Vector2.ZERO

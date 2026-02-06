@@ -27,7 +27,7 @@ func _ready() -> void:
 	
 	# Setup collision shapes if data is already set
 	if data:
-		#_setup_collision_shapes()
+		_setup_collision_shapes()
 		init_state_machine()
 
 
@@ -36,53 +36,42 @@ func setup(_data: EnemyData) -> void:
 	data = _data.duplicate()
 	animated_sprite.sprite_frames = _data.sprite_frames
 	
+	# Start playing animations
+	animated_sprite.play(data.idle_anim)
+	
 	# Setup collision shapes if _ready has already been called
-	#if collision_shape_2d:
-		#_setup_collision_shapes()
+	if collision_shape_2d:
+		_setup_collision_shapes()
 	init_state_machine()
 
 func init_state_machine() -> void:
 	state_machine.init(self, playback, null)
 
-#func _setup_collision_shapes() -> void:
-	#var texture_size = data.texture.get_size()
-	#var shape = RectangleShape2D.new()
-	#shape.size = texture_size
-	#collision_shape_2d.shape = shape
-	#hurt_collision_shape_2d.shape = shape
-	#z_index = 100
+func _setup_collision_shapes() -> void:
+	# Setup main collision shape
+	var body_shape = RectangleShape2D.new()
+	body_shape.size = data.collision_shape_size
+	collision_shape_2d.shape = body_shape
+	collision_shape_2d.position = data.collision_shape_offset
+	
+	# Setup hurtbox collision shape
+	var hurt_shape = RectangleShape2D.new()
+	hurt_shape.size = data.hurtbox_shape_size
+	hurt_collision_shape_2d.shape = hurt_shape
+	hurt_collision_shape_2d.position = data.hurtbox_shape_offset
 
 func _physics_process(delta: float) -> void:
 	if state_machine:
 		state_machine.process_physics(delta)
-	#follow_player()
 	move_and_slide()
 
 func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
 	data.health -= amount
 	playback.travel(data.hit_anim)
-	
 	if data.health <= 0:
 		playback.travel(data.death_anim)
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(1).timeout
 		queue_free()
-	#playback.travel("hit")
-	#await get_tree().create_timer(0.15).timeout
-	#playback.travel("Start")
-	#
-	#if data.health <= 0:
-		#queue_free()
-
-#func follow_player() -> void:
-	#if not data:
-		#return
-	#if not data.follow_player:
-		#return
-	#if not player:
-		#return
-	#
-	#var direction = (player.position - position).normalized()
-	#if position.distance_to(player.position) < data.range:
-		#velocity = direction * data.speed
-	#else:
-		#velocity = Vector2.ZERO
+	
+	if data.health <= 0:
+		queue_free()

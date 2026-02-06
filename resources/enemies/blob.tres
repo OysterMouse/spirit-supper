@@ -7,7 +7,7 @@
 [resource]
 script = ExtResource("1_m8whk")
 enemy_name = "Blob"
-health = 50
+health = 20
 sprite_frames = ExtResource("2_csnsl")
 speed = 40.0
 range = 100.0
@@ -16,4 +16,6 @@ walk_anim = "walk"
 attack_anim = ""
 hit_anim = "hit"
 death_anim = "death"
+collision_shape_size = Vector2(4, 4)
+hurtbox_shape_size = Vector2(8, 8)
 metadata/_custom_type_script = "uid://5ttegi2tg2om"
