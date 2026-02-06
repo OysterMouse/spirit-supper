@@ -8,7 +8,7 @@ var cleanup_done: bool = false
 func enter() -> void:
 	var enemy: Enemy = parent as Enemy
 	animation_name = enemy.data.death_anim
-	super()
+	super()  # Just travel to animation - blend position updates automatically
 	
 	# Stop all movement
 	enemy.velocity = Vector2.ZERO
@@ -16,9 +16,6 @@ func enter() -> void:
 	# Disable collisions
 	enemy.collision_shape_2d.set_deferred("disabled", true)
 	enemy.hurt_collision_shape_2d.set_deferred("disabled", true)
-	
-	# Maintain last direction for death animation
-	enemy.set_blend_position(animation_name, enemy.last_direction)
 	
 	death_timer = 0.0
 	cleanup_done = false

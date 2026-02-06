@@ -8,11 +8,10 @@ var hit_timer: float = 0.0
 func enter() -> void:
 	var enemy: Enemy = parent as Enemy
 	animation_name = enemy.data.hit_anim
-	super()
+	super()  # Just travel to animation - blend position updates automatically
 	
-	# Knockback and maintain last direction
+	# Stop movement during hit
 	enemy.velocity = Vector2.ZERO
-	enemy.set_blend_position(animation_name, enemy.last_direction)
 	hit_timer = 0.0
 
 func process_physics(delta: float) -> State:

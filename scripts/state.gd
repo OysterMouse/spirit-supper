@@ -11,6 +11,12 @@ var input_component : Node
 func enter() -> void:
 	playback.travel(animation_name)
 	
+	# Auto-play AnimatedSprite2D if parent has one
+	if parent.has_node("AnimatedSprite"):
+		var sprite = parent.get_node("AnimatedSprite")
+		if sprite is AnimatedSprite2D and sprite.animation != "":
+			sprite.play()
+	
 	if use_blend_space and parent.has_method("set_blend_position"):
 		update_blend_direction()
 

@@ -1,50 +1,14 @@
 [gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dtpvdkbdsm8gd"]
 
 [ext_resource type="Script" uid="uid://5ttegi2tg2om" path="res://scripts/enemy/enemy_data.gd" id="1_8xq26"]
-[ext_resource type="Texture2D" uid="uid://ct2ex88yors6r" path="res://assets/Archer Goblin/Idle.png" id="2_g4trc"]
+[ext_resource type="SpriteFrames" uid="uid://bm718ovjm6i78" path="res://resources/enemies/animations/goblin_archer_frames.tres" id="2_g4trc"]
 [ext_resource type="PackedScene" uid="uid://cgevcuagfdd4v" path="res://scenes/enemy.tscn" id="2_qu8um"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xbyo6"]
-atlas = ExtResource("2_g4trc")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v16vd"]
-atlas = ExtResource("2_g4trc")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8k5n1"]
-atlas = ExtResource("2_g4trc")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_37ncl"]
-atlas = ExtResource("2_g4trc")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qlwjc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xbyo6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v16vd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8k5n1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_37ncl")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
 
 [resource]
 script = ExtResource("1_8xq26")
 enemy_name = "Goblin Archer"
 health = 40
-sprite_frames = SubResource("SpriteFrames_qlwjc")
+sprite_frames = ExtResource("2_g4trc")
 speed = 20.0
 range = 120.0
 description = "Sneaky boi"

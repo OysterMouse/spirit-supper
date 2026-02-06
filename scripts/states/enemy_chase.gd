@@ -29,10 +29,7 @@ func process_physics(delta: float) -> State:
 	enemy.velocity = direction * enemy.data.speed
 	enemy.direction = direction
 	
-	# Update blend position for directional animation
-	enemy.set_blend_position(animation_name, direction)
-	
-	# Track last direction for idle state
+	# Track last direction (blend position updates automatically)
 	if direction.length() > 0.1:
 		enemy.last_direction = direction
 	

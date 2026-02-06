@@ -66,6 +66,12 @@ func _setup_collision_shapes() -> void:
 	hurt_collision_shape_2d.position = data.hurtbox_shape_offset
 
 func _physics_process(delta: float) -> void:
+	if direction != Vector2.ZERO:
+		last_direction = direction
+	
+	# Update blend positions continuously like player does
+	update_animation_params()
+	
 	if state_machine:
 		state_machine.process_physics(delta)
 		move_and_slide()
@@ -87,10 +93,14 @@ func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
 func set_blend_position(state_name: String, direction: Vector2) -> void:
 	animation_tree.set("parameters/" + state_name + "/blend_position", direction)
 
-#func update_animation_params():
-	#if direction == Vector2.ZERO:
-		#return
-	#animation_tree["parameters/Idle/blend_position"] = direction
+func update_animation_params():
+	# Use last_direction for blend position (updated when moving)
+	if direction == Vector2.ZERO:
+		return
+	animation_tree["parameters/" + data.idle_anim + "/blend_position"] = direction
+	animation_tree["parameters/" + data.walk_anim + "/blend_position"] = direction
+	animation_tree["parameters/" + data.hit_anim + "/blend_position"] = direction
+	animation_tree["parameters/" + data.death_anim + "/blend_position"] = direction
 	#animation_tree["parameters/Walk/blend_position"] = direction
 	#animation_tree["parameters/Hit/blend_position"] = direction
 	#animation_tree["parameters/Death/blend_position"] = direction

@@ -10,8 +10,6 @@
 [ext_resource type="Resource" uid="uid://boc7rgloqrhwe" path="res://resources/items/orange.tres" id="7_w7kh3"]
 [ext_resource type="Resource" uid="uid://bvncoy7qeddvv" path="res://resources/tools/sword.tres" id="8_4mrxx"]
 [ext_resource type="Resource" uid="uid://do5gnmvuy2f8e" path="res://resources/tools/axe.tres" id="9_7r4gi"]
-[ext_resource type="Texture2D" uid="uid://cy5mxhcpobt27" path="res://assets/cabin_v2.png" id="10_e3hyu"]
-[ext_resource type="Script" uid="uid://cdo7ctximnkqh" path="res://scripts/cabin.gd" id="11_e3hyu"]
 [ext_resource type="Script" uid="uid://by6hdb2k4ajvc" path="res://scripts/enemy/enemy_spawner.gd" id="12_o8fc1"]
 [ext_resource type="Script" uid="uid://5ttegi2tg2om" path="res://scripts/enemy/enemy_data.gd" id="13_xo05s"]
 [ext_resource type="Resource" uid="uid://68phj0tu3kfv" path="res://resources/enemies/blob.tres" id="14_dss4m"]
@@ -1383,9 +1381,6 @@ terrain_set_0/terrain_0/name = "Dirt"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_4wyf3")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w7kh3"]
-size = Vector2(17, 24)
-
 [node name="World" type="Node2D" unique_id=2006691139]
 script = ExtResource("1_71j4m")
 
@@ -1398,7 +1393,7 @@ tile_set = SubResource("TileSet_k0juu")
 
 [node name="Player" parent="." unique_id=1730374081 instance=ExtResource("1_nnsk1")]
 z_index = 1
-position = Vector2(166, 72)
+position = Vector2(41, 52)
 move_speed = 125.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=317909333]
@@ -1413,21 +1408,6 @@ position = Vector2(259, 71)
 script = ExtResource("4_i7141")
 items = Array[ExtResource("5_4mrxx")]([ExtResource("6_7r4gi"), ExtResource("7_w7kh3"), ExtResource("8_4mrxx"), ExtResource("9_7r4gi")])
 
-[node name="Cabin" type="Sprite2D" parent="." unique_id=799259922]
-position = Vector2(164, 1)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("10_e3hyu")
-script = ExtResource("11_e3hyu")
-
-[node name="Area2D" type="Area2D" parent="Cabin" unique_id=753050620]
-position = Vector2(3, -32)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cabin/Area2D" unique_id=342440586]
-position = Vector2(-19, 44)
-shape = SubResource("RectangleShape2D_w7kh3")
-
 [node name="Cabin2" type="Sprite2D" parent="." unique_id=662711798]
-position = Vector2(338, 72)
+position = Vector2(157, -21)
 texture = ExtResource("15_xo05s")
-
-[connection signal="body_entered" from="Cabin/Area2D" to="Cabin" method="_on_area_2d_body_entered"]
