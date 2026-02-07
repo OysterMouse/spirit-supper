@@ -7,9 +7,11 @@
 [resource]
 script = ExtResource("1_8xq26")
 enemy_name = "Goblin Archer"
-health = 40
+health = 100
 sprite_frames = ExtResource("2_g4trc")
-speed = 20.0
+speed = 40.0
 range = 120.0
 description = "Sneaky boi"
+collision_shape_size = Vector2(16, 16)
+hurtbox_shape_size = Vector2(20, 20)
 metadata/_custom_type_script = "uid://5ttegi2tg2om"

@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://ddw6mkb8reaja" path="res://scenes/hurt_component.tscn" id="2_4ra3w"]
 [ext_resource type="SpriteFrames" uid="uid://bm718ovjm6i78" path="res://resources/enemies/animations/goblin_archer_frames.tres" id="2_md484"]
 [ext_resource type="Script" uid="uid://d050vuve86j75" path="res://scripts/state_machine.gd" id="3_4ra3w"]
-[ext_resource type="Script" uid="uid://dsu8ff3afpvgm" path="res://scripts/states/enemy_idle.gd" id="5_md484"]
-[ext_resource type="Script" uid="uid://bbchd2ji1omp3" path="res://scripts/states/enemy_chase.gd" id="6_md484"]
-[ext_resource type="Script" uid="uid://blbrjcgnr1xqp" path="res://scripts/states/enemy_hit.gd" id="7_md484"]
-[ext_resource type="Script" uid="uid://c15k37mm2vpq2" path="res://scripts/states/enemy_death.gd" id="8_ipns3"]
+[ext_resource type="Script" uid="uid://dsu8ff3afpvgm" path="res://scripts/enemy/states/enemy_idle.gd" id="5_md484"]
+[ext_resource type="Script" uid="uid://bbchd2ji1omp3" path="res://scripts/enemy/states/enemy_chase.gd" id="6_md484"]
+[ext_resource type="Script" uid="uid://blbrjcgnr1xqp" path="res://scripts/enemy/states/enemy_hit.gd" id="7_md484"]
+[ext_resource type="Script" uid="uid://c15k37mm2vpq2" path="res://scripts/enemy/states/enemy_death.gd" id="8_ipns3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
 radius = 5.0
@@ -628,6 +628,7 @@ states/Walk/position = Vector2(480.4, 85.663994)
 graph_offset = Vector2(53, 10)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=875032184 node_paths=PackedStringArray("hit_state", "death_state")]
+motion_mode = 1
 script = ExtResource("1_md0e3")
 hit_state = NodePath("StateMachine/Hit")
 death_state = NodePath("StateMachine/Death")

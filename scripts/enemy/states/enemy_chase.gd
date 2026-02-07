@@ -1,11 +1,11 @@
 extends State
 
 @export var idle_state: State
-#@export var attack_state: State
+@export var attack_state: State
 
 func enter() -> void:
-	#animation_name = parent.data.walk_anim
-	#use_blend_space = true
+	var enemy: Enemy = parent as Enemy
+	#animation_name = enemy.data.walk_anim
 	super()
 
 func process_physics(delta: float) -> State:
@@ -21,14 +21,16 @@ func process_physics(delta: float) -> State:
 		return idle_state
 	
 	# Close enough to attack
-	#if enemy.data.can_attack and distance < enemy.data.attack_range:
-		#return attack_state
+	if enemy.data.can_attack and attack_state and distance < enemy.data.attack_range:
+		return attack_state
 	
 	# Chase player
 	var direction = (enemy.player.position - enemy.position).normalized()
 	enemy.velocity = direction * enemy.data.speed
+	enemy.direction = direction
 	
-	if use_blend_space:
-		enemy.set_blend_position(animation_name, direction)
+	# Track last direction (blend position updates automatically)
+	if direction.length() > 0.1:
+		enemy.last_direction = direction
 	
 	return null

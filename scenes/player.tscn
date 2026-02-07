@@ -2245,6 +2245,7 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_qfm1y")
 states/Walk/position = Vector2(476, 75)
 
 [node name="Player" type="CharacterBody2D" unique_id=2113674106 groups=["player"]]
+motion_mode = 1
 script = ExtResource("1_qlg0r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1597308256]
