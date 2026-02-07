@@ -525,16 +525,16 @@ _data = {
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8qclf"]
-animation = &"death"
+animation = &"death_west"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w8i8w"]
-animation = &"death"
+animation = &"death_south"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_otmr2"]
-animation = &"death"
+animation = &"death_east"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wtq4b"]
-animation = &"death"
+animation = &"death_north"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_j0cyh"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_8qclf")
