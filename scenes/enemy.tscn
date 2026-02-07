@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dmaha38822nyn" path="res://scripts/enemy/enemy.gd" id="1_md0e3"]
 [ext_resource type="PackedScene" uid="uid://ddw6mkb8reaja" path="res://scenes/hurt_component.tscn" id="2_4ra3w"]
-[ext_resource type="SpriteFrames" uid="uid://bau1wreagttsb" path="res://resources/enemies/animations/blob_sprite_frames.tres" id="2_5uy6h"]
+[ext_resource type="SpriteFrames" uid="uid://bm718ovjm6i78" path="res://resources/enemies/animations/goblin_archer_frames.tres" id="2_md484"]
 [ext_resource type="Script" uid="uid://d050vuve86j75" path="res://scripts/state_machine.gd" id="3_4ra3w"]
 [ext_resource type="Script" uid="uid://dsu8ff3afpvgm" path="res://scripts/states/enemy_idle.gd" id="5_md484"]
 [ext_resource type="Script" uid="uid://bbchd2ji1omp3" path="res://scripts/states/enemy_chase.gd" id="6_md484"]
@@ -633,7 +633,7 @@ hit_state = NodePath("StateMachine/Hit")
 death_state = NodePath("StateMachine/Death")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="." unique_id=1721216372]
-sprite_frames = ExtResource("2_5uy6h")
+sprite_frames = ExtResource("2_md484")
 animation = &"hit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1404582488]
