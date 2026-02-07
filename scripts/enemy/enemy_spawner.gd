@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	for enemy in enemies:
-		var random_enemy = enemies[0]
+		var random_enemy = enemies.pick_random()
 		var enemy_scene: Enemy = random_enemy.world_enemy_scene.instantiate()
 		var mouse_pos: Vector2 = camera_2d.get_global_mouse_position()
 		

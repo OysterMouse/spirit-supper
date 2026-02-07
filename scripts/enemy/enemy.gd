@@ -35,14 +35,13 @@ func _ready() -> void:
 		_setup_collision_shapes()
 		init_state_machine()
 
-
 func setup(_data: EnemyData) -> void:
 	# Duplicate the resource so each enemy has its own stats
 	data = _data.duplicate()
 	animated_sprite.sprite_frames = _data.sprite_frames
 	
 	# Start playing animations
-	animated_sprite.play(data.idle_anim)
+	#animated_sprite.play(data.idle_anim)
 	
 	# Setup collision shapes if _ready has already been called
 	if collision_shape_2d:
@@ -76,7 +75,6 @@ func _physics_process(delta: float) -> void:
 		state_machine.process_physics(delta)
 		move_and_slide()
 	
-
 func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
 	data.health -= amount
 	
@@ -88,7 +86,6 @@ func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
 		# Transition to hit state
 		if hit_state:
 			state_machine.change_state(hit_state)
-		
 
 func update_animation_params():
 	# Check if enemy data is loaded

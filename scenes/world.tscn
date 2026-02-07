@@ -9,6 +9,7 @@
 [ext_resource type="Resource" uid="uid://1kaka7eqxgwb" path="res://resources/enemies/blue_slime.tres" id="7_dss4m"]
 [ext_resource type="Resource" uid="uid://boc7rgloqrhwe" path="res://resources/items/orange.tres" id="7_w7kh3"]
 [ext_resource type="Resource" uid="uid://bvncoy7qeddvv" path="res://resources/tools/sword.tres" id="8_4mrxx"]
+[ext_resource type="Resource" uid="uid://dtpvdkbdsm8gd" path="res://resources/enemies/goblin_archer.tres" id="8_xo05s"]
 [ext_resource type="Resource" uid="uid://do5gnmvuy2f8e" path="res://resources/tools/axe.tres" id="9_7r4gi"]
 [ext_resource type="Script" uid="uid://by6hdb2k4ajvc" path="res://scripts/enemy/enemy_spawner.gd" id="12_o8fc1"]
 [ext_resource type="Script" uid="uid://5ttegi2tg2om" path="res://scripts/enemy/enemy_data.gd" id="13_xo05s"]
@@ -1401,7 +1402,7 @@ zoom = Vector2(2, 2)
 
 [node name="EnemySpawner" type="Node2D" parent="." unique_id=160181410]
 script = ExtResource("12_o8fc1")
-enemies = Array[ExtResource("13_xo05s")]([ExtResource("14_dss4m"), ExtResource("7_dss4m")])
+enemies = Array[ExtResource("13_xo05s")]([ExtResource("14_dss4m"), ExtResource("7_dss4m"), ExtResource("8_xo05s")])
 
 [node name="ItemSpawner" type="Node2D" parent="." unique_id=1337457238]
 position = Vector2(259, 71)
