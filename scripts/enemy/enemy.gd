@@ -98,3 +98,4 @@ func update_animation_params():
 	animation_tree["parameters/" + data.walk_anim + "/blend_position"] = last_direction
 	animation_tree["parameters/" + data.hit_anim + "/blend_position"] = last_direction
 	animation_tree["parameters/" + data.death_anim + "/blend_position"] = last_direction
+	animation_tree["parameters/" + data.attack_anim + "/blend_position"] = last_direction
