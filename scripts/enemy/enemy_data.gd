@@ -25,6 +25,8 @@ extends Resource
 @export var attack_cooldown: float = 1.0
 @export var can_attack: bool = false
 @export var attack_damage: int = 5
+@export var hit_invulnerability: float = 0.5  # Time before enemy can be stunned again
+@export var super_armor_during_attack: bool = true  # Can't be interrupted during attacks
 
 # Collision Configuration
 @export_group("Collision")

@@ -16,6 +16,8 @@ var data : EnemyData
 var playback : AnimationNodeStateMachinePlayback
 var direction: Vector2 = Vector2.ZERO
 var last_direction: Vector2 = Vector2.DOWN  # Default facing down
+var hit_cooldown_timer: float = 0.0  # Invulnerability timer
+var is_super_armored: bool = false  # Can't be interrupted when true
 
 func _ready() -> void:
 	# Find the player in the scene
@@ -68,6 +70,10 @@ func _physics_process(delta: float) -> void:
 	if direction != Vector2.ZERO:
 		last_direction = direction
 	
+	# Update invulnerability timer
+	if hit_cooldown_timer > 0:
+		hit_cooldown_timer -= delta
+	
 	# Update blend positions continuously like player does
 	update_animation_params()
 	
@@ -76,6 +82,11 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	
 func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
+	# Check invulnerability first - don't take any damage if invulnerable
+	if hit_cooldown_timer > 0:
+		return  # Still invulnerable, ignore damage completely
+	
+	# Apply damage
 	data.health -= amount
 	
 	if data.health <= 0:
@@ -83,9 +94,10 @@ func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
 		if death_state:
 			state_machine.change_state(death_state)
 	else:
-		# Transition to hit state
-		if hit_state:
+		# Only stun if not super armored (invulnerability already checked above)
+		if hit_state and not is_super_armored:
 			state_machine.change_state(hit_state)
+		# With super armor: takes damage but doesn't get stunned
 
 func update_animation_params():
 	# Check if enemy data is loaded
@@ -93,6 +105,8 @@ func update_animation_params():
 		return
 	# Use last_direction for blend position (updated when moving)
 	if last_direction == Vector2.ZERO:
+		return
+	if not data.attack_anim:
 		return
 	animation_tree["parameters/" + data.idle_anim + "/blend_position"] = last_direction
 	animation_tree["parameters/" + data.walk_anim + "/blend_position"] = last_direction

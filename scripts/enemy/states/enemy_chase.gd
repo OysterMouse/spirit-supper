@@ -3,6 +3,8 @@ extends State
 @export var idle_state: State
 @export var attack_state: State
 
+var attack_cooldown_timer: float = 0.0
+
 func enter() -> void:
 	var enemy: Enemy = parent as Enemy
 	#animation_name = enemy.data.walk_anim
@@ -11,6 +13,9 @@ func enter() -> void:
 func process_physics(delta: float) -> State:
 	var enemy: Enemy = parent as Enemy
 	
+	if attack_cooldown_timer > 0:
+		attack_cooldown_timer -= delta
+
 	if not enemy.player:
 		return idle_state
 	
@@ -18,10 +23,11 @@ func process_physics(delta: float) -> State:
 	
 	# Too far, return to idle
 	if distance > enemy.data.detection_range:
+		attack_cooldown_timer = 0.0
 		return idle_state
 	
 	# Close enough to attack
-	if enemy.data.can_attack and attack_state and distance < enemy.data.attack_range:
+	if enemy.data.can_attack and attack_state and distance < enemy.data.attack_range and attack_cooldown_timer <= 0:
 		return attack_state
 	
 	# Chase player

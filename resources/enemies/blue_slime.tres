@@ -10,6 +10,7 @@ enemy_name = "Blue Slime"
 sprite_frames = ExtResource("2_u2ybk")
 speed = 60.0
 range = 80.0
+attack_anim = ""
 collision_shape_size = Vector2(4, 4)
 hurtbox_shape_size = Vector2(8, 8)
 metadata/_custom_type_script = "uid://5ttegi2tg2om"

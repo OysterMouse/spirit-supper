@@ -29,7 +29,10 @@ func process_physics(delta: float) -> State:
 	return null
 
 func exit() -> void:
+	var enemy: Enemy = parent as Enemy
 	hit_timer = 0.0
+	# Set invulnerability timer when leaving hit state
+	enemy.hit_cooldown_timer = enemy.data.hit_invulnerability
 	
 func _play_hit_effect() -> void:
 	var enemy: Enemy = parent as Enemy
