@@ -1394,7 +1394,7 @@ tile_set = SubResource("TileSet_k0juu")
 
 [node name="Player" parent="." unique_id=1730374081 instance=ExtResource("1_nnsk1")]
 z_index = 1
-position = Vector2(41, 52)
+position = Vector2(31, 32)
 move_speed = 125.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=317909333]
