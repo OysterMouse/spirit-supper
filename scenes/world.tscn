@@ -1400,7 +1400,7 @@ move_speed = 125.0
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=317909333]
 zoom = Vector2(2, 2)
 
-[node name="EnemySpawner2" type="Node2D" parent="." unique_id=1962497781]
+[node name="BlueSlimeSpawner" type="Node2D" parent="." unique_id=1962497781]
 position = Vector2(342, 50)
 script = ExtResource("12_o8fc1")
 enemy_data = ExtResource("7_dss4m")
@@ -1408,7 +1408,7 @@ preview_color = Color(0, 0.57129514, 0.8366215, 1)
 preview_radius = 8.0
 dynamic_enemy_pool = Array[ExtResource("13_xo05s")]([ExtResource("8_xo05s"), ExtResource("14_dss4m"), ExtResource("7_dss4m")])
 
-[node name="EnemySpawner" type="Node2D" parent="." unique_id=160181410]
+[node name="GoblinArcherSpawner" type="Node2D" parent="." unique_id=160181410]
 position = Vector2(137, 96)
 script = ExtResource("12_o8fc1")
 enemy_data = ExtResource("8_xo05s")
