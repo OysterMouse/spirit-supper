@@ -93,6 +93,7 @@ func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
 	if data.health <= 0:
 		# Transition to death state
 		if death_state:
+			print("hit and dead")
 			state_machine.change_state(death_state)
 	else:
 		# Only stun if not super armored (invulnerability already checked above)
