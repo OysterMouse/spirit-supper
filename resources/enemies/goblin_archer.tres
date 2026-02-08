@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://5ttegi2tg2om" path="res://scripts/enemy/enemy_data.gd" id="1_8xq26"]
 [ext_resource type="SpriteFrames" uid="uid://bm718ovjm6i78" path="res://resources/enemies/animations/goblin_archer_frames.tres" id="2_g4trc"]
-[ext_resource type="PackedScene" uid="uid://cgevcuagfdd4v" path="res://scenes/enemy.tscn" id="3_qu8um"]
+
+[sub_resource type="PackedScene" id="PackedScene_8xq26"]
 
 [resource]
 script = ExtResource("1_8xq26")
@@ -13,9 +14,9 @@ speed = 40.0
 range = 120.0
 description = "Sneaky boi"
 attack_range = 80.0
-attack_cooldown = 1.5
+attack_cooldown = 0.5
 can_attack = true
-hit_invulnerability = 5.0
+hit_invulnerability = 1.0
 super_armor_during_attack = false
 collision_shape_size = Vector2(16, 16)
 hurtbox_shape_size = Vector2(20, 20)

@@ -15,7 +15,7 @@ var player: Player
 var data : EnemyData
 var playback : AnimationNodeStateMachinePlayback
 var direction: Vector2 = Vector2.ZERO
-var last_direction: Vector2 = Vector2.DOWN  # Default facing down
+var last_direction: Vector2 = Vector2.RIGHT  # Default facing down
 var hit_cooldown_timer: float = 0.0  # Invulnerability timer
 var is_super_armored: bool = false  # Can't be interrupted when true
 
