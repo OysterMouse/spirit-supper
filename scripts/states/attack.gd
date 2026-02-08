@@ -71,7 +71,6 @@ func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
 			if not hit_component.hit_hurtbox.is_connected(_on_hit_hurtbox):
 				hit_component.hit_hurtbox.connect(_on_hit_hurtbox)
 			hit_component.enable_and_check()
-			print("combo 2")
 	elif current_attack == "Attack_2" and "attack" in anim_name:
 		is_using = false
 	elif current_attack == "Attack_1" and "attack" in anim_name:

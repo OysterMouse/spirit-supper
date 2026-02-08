@@ -84,6 +84,7 @@ func _physics_process(delta: float) -> void:
 func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
 	# Check invulnerability first - don't take any damage if invulnerable
 	if hit_cooldown_timer > 0:
+		print("Invulnerable")
 		return  # Still invulnerable, ignore damage completely
 	
 	# Apply damage
@@ -97,6 +98,7 @@ func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
 		# Only stun if not super armored (invulnerability already checked above)
 		if hit_state and not is_super_armored:
 			state_machine.change_state(hit_state)
+			print("hit")
 		# With super armor: takes damage but doesn't get stunned
 
 func update_animation_params():

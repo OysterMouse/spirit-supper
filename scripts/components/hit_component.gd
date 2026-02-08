@@ -28,4 +28,4 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is HurtComponent:
 		area.take_damage(damage, tool_type)
 		hit_hurtbox.emit(area)
-		print("Hit with: ", tool_name, " (", DataTypes.Tools.keys()[tool_type], ") for ", damage, " damage")
+		#print("Hit with: ", tool_name, " (", DataTypes.Tools.keys()[tool_type], ") for ", damage, " damage")
