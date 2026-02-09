@@ -1,7 +1,7 @@
 extends Sprite2D
 
 @export var max_health: int = 30
-@export var logs_to_drop: int = randi_range(2, 5)
+@export var logs_to_drop: int = randi_range(4, 12)
 @export var health_per_hit: int = 10
 @export var required_axe_material: DataTypes.MaterialType = DataTypes.MaterialType.WOOD
 
