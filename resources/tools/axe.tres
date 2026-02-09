@@ -9,7 +9,6 @@ region = Rect2(48, 0, 16, 16)
 
 [resource]
 script = ExtResource("1_o1xek")
-damage = 5
 tool_type = 1
 item_name = "Wooden Axe"
 texture = SubResource("AtlasTexture_t6t0y")
