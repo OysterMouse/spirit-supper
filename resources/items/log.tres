@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://bymmd443nwi3b"]
+
+[ext_resource type="Script" uid="uid://m60fijagcay" path="res://scripts/items/item_data.gd" id="1_hbu7g"]
+[ext_resource type="Texture2D" uid="uid://dmfyjaax4mxks" path="res://assets/Tree_Branches_31.png" id="2_8ql1g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3lia"]
+atlas = ExtResource("2_8ql1g")
+region = Rect2(8, 88, 32, 24)
+
+[resource]
+script = ExtResource("1_hbu7g")
+item_name = "Log"
+texture = SubResource("AtlasTexture_d3lia")
+description = "Used for crafting"
+stack_size = 99
+item_type = 2
+metadata/_custom_type_script = "uid://m60fijagcay"

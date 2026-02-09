@@ -6,6 +6,6 @@ func _ready() -> void:
 	
 	var sword : GameItem = item_sword.world_item_scene.instantiate()
 	sword.setup(item_sword)
-	sword.global_position = Vector2(75, -100)
+	sword.global_position = Vector2(-30, -50)
 	sword.z_index = 100
 	add_child(sword)

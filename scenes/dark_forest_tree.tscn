@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://beqsa5xaw5t4p"]
+
+[ext_resource type="Texture2D" uid="uid://b5qsjy7svkk6f" path="res://assets/Maple Tree.png" id="1_ej2h3"]
+[ext_resource type="Script" uid="uid://dnlg6hj7b80ve" path="res://scenes/dark_forest_tree.gd" id="2_hnq8l"]
+[ext_resource type="PackedScene" uid="uid://ddw6mkb8reaja" path="res://scenes/hurt_component.tscn" id="2_nor3p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnq8l"]
+atlas = ExtResource("1_ej2h3")
+region = Rect2(160, 48, 32, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28kk5"]
+size = Vector2(14, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lups"]
+size = Vector2(14, 20)
+
+[node name="DarkForestTree" type="Sprite2D" unique_id=1417996599]
+texture = SubResource("AtlasTexture_hnq8l")
+script = ExtResource("2_hnq8l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=803934284]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=703489191]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_28kk5")
+
+[node name="HurtComponent" parent="." unique_id=1234258498 instance=ExtResource("2_nor3p")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=1085145885]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_1lups")
