@@ -42,7 +42,7 @@ func _spawn_log() -> void:
 	game_item.velocity = Vector2.RIGHT.rotated(angle) * randf_range(50, 150)
 	game_item.pickup_enabled = false  # Don't pick up while scattering
 	
-	get_parent().add_child(game_item)
+	get_parent().call_deferred("add_child", game_item)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
