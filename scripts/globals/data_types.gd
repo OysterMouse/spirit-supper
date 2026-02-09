@@ -17,3 +17,11 @@ enum ItemType{
 	MATERIAL,
 	QUEST
 }
+
+enum MaterialType{
+	WOOD = 0,
+	STONE = 1,
+	IRON = 2,
+	GOLD = 3,
+	DIAMOND = 4
+}

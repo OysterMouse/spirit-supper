@@ -3,3 +3,4 @@ extends ItemData
 
 @export var damage: int = 10
 @export var tool_type: DataTypes.Tools = DataTypes.Tools.NONE
+@export var tool_material: DataTypes.MaterialType = DataTypes.MaterialType.WOOD

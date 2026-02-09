@@ -3,6 +3,7 @@ extends Sprite2D
 @export var max_health: int = 30
 @export var logs_to_drop: int = randi_range(2, 5)
 @export var health_per_hit: int = 10
+@export var required_axe_material: DataTypes.MaterialType = DataTypes.MaterialType.WOOD
 
 var current_health: int
 var log_item: ItemData = preload("res://resources/items/log.tres")
@@ -17,8 +18,15 @@ func _ready() -> void:
 		hurt_component.damage_received.connect(_on_damage_received)
 	
 func _on_damage_received(amount: int, tool_type: DataTypes.Tools) -> void:
-	if tool_type != DataTypes.Tools.AXE:
-		return
+	var player: Player = get_tree().get_first_node_in_group("player")
+	if player and player.equipped_tool_data:
+		if tool_type != DataTypes.Tools.AXE:
+			print("Wrong tool")
+			return
+		var tool: ToolData = player.equipped_tool_data
+		if tool.tool_material < required_axe_material:
+			print("Tool too weak!")
+			return
 	
 	current_health -= amount
 	
