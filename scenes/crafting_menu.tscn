@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://bif3tk3lanayr"]
+
+[ext_resource type="Script" uid="uid://chvdu8fpxuh16" path="res://scripts/recipes/crafting_menu.gd" id="1_megae"]
+[ext_resource type="PackedScene" uid="uid://dl6pulm2f0vgu" path="res://scenes/recipe_button.tscn" id="1_uiuyx"]
+[ext_resource type="PackedScene" uid="uid://cghv1ngxys4h3" path="res://scenes/ingredient.tscn" id="2_8qu5l"]
+[ext_resource type="Script" uid="uid://dwbobf4mosvfi" path="res://scripts/recipes/craft_button.gd" id="3_udled"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udmr0"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8qu5l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udled"]
+bg_color = Color(0, 0, 0, 0.28627452)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_megae"]
+bg_color = Color(1, 1, 1, 0.11764706)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lw6op"]
+
+[node name="CraftingMenu" type="Control" unique_id=460204409]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_megae")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=956277204]
+custom_minimum_size = Vector2(120, 240)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_udmr0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=49359244]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="RecipesLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1427906705]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Recipes"
+vertical_alignment = 1
+
+[node name="Recipes" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=872935307]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer/Recipes" unique_id=1772571988]
+layout_mode = 2
+
+[node name="RecipeContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/Recipes/ScrollContainer" unique_id=746559528]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RecipeButton" parent="PanelContainer/VBoxContainer/Recipes/ScrollContainer/RecipeContainer" unique_id=447725777 instance=ExtResource("1_uiuyx")]
+layout_mode = 2
+
+[node name="InputLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1669513563]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Input"
+vertical_alignment = 1
+
+[node name="Ingredients" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=602255151]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/VBoxContainer/Ingredients" unique_id=823237279]
+layout_mode = 2
+
+[node name="IngredientContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/Ingredients/ScrollContainer" unique_id=445431394]
+layout_mode = 2
+
+[node name="Ingredient" parent="PanelContainer/VBoxContainer/Ingredients/ScrollContainer/IngredientContainer" unique_id=608352858 instance=ExtResource("2_8qu5l")]
+layout_mode = 2
+
+[node name="OutputLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1056845216]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+text = "Output"
+vertical_alignment = 1
+
+[node name="Output" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1781675574]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 4
+
+[node name="OutputItem" parent="PanelContainer/VBoxContainer/Output" unique_id=590959964 instance=ExtResource("2_8qu5l")]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="CraftContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=519371725]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 0
+
+[node name="CraftButton" type="Button" parent="PanelContainer/VBoxContainer/CraftContainer" unique_id=971330282]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_disabled_color = Color(0.8030584, 0, 0.10424877, 0.5019608)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8qu5l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_udled")
+theme_override_styles/hover = SubResource("StyleBoxFlat_megae")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lw6op")
+script = ExtResource("3_udled")
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/CraftContainer/CraftButton" unique_id=1013017037]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CRAFT"
+horizontal_alignment = 1
+vertical_alignment = 1

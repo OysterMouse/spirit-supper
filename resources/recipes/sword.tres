@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" format=3 uid="uid://cxxyrccnur3xj"]
+
+[ext_resource type="Script" uid="uid://cug1qrxov5i3a" path="res://scripts/recipes/crafting_recipe.gd" id="1_recipe"]
+[ext_resource type="Script" uid="uid://cjpkm5deth0y6" path="res://scripts/recipes/crafting_ingredient.gd" id="2_ingredient"]
+[ext_resource type="Resource" uid="uid://bymmd443nwi3b" path="res://resources/items/log.tres" id="3_log"]
+[ext_resource type="Resource" uid="uid://bvncoy7qeddvv" path="res://resources/tools/sword.tres" id="4_sword"]
+
+[sub_resource type="Resource" id="Resource_input"]
+script = ExtResource("2_ingredient")
+item = ExtResource("3_log")
+count = 2
+metadata/_custom_type_script = "uid://cjpkm5deth0y6"
+
+[sub_resource type="Resource" id="Resource_output"]
+script = ExtResource("2_ingredient")
+item = ExtResource("4_sword")
+count = 1
+metadata/_custom_type_script = "uid://cjpkm5deth0y6"
+
+[resource]
+script = ExtResource("1_recipe")
+ingredients = Array[ExtResource("2_ingredient")]([SubResource("Resource_input")])
+output = SubResource("Resource_output")
+metadata/_custom_type_script = "uid://cug1qrxov5i3a"

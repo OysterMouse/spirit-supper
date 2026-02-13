@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ToolData" format=3 uid="uid://bb7coatb558yw"]
+
+[ext_resource type="Script" uid="uid://cwhsooot5e3wx" path="res://scripts/tools/tool_data.gd" id="1_7ai58"]
+[ext_resource type="Texture2D" uid="uid://dogqvgvwh3kqo" path="res://assets/1.png" id="2_g3jp3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fh252"]
+atlas = ExtResource("2_g3jp3")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_7ai58")
+tool_type = 3
+item_name = "Wooden Pickaxe"
+texture = SubResource("AtlasTexture_fh252")
+is_tool = true
+metadata/_custom_type_script = "uid://cwhsooot5e3wx"

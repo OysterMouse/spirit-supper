@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CraftingRecipe" format=3]
+
+[ext_resource type="Script" uid="uid://cug1qrxov5i3a" path="res://scripts/recipes/crafting_recipe.gd" id="1_recipe"]
+[ext_resource type="Script" uid="uid://cjpkm5deth0y6" path="res://scripts/recipes/crafting_ingredient.gd" id="2_ingredient"]
+[ext_resource type="Resource" uid="uid://dctebfs1f6tqp" path="res://resources/items/banana.tres" id="3_banana"]
+[ext_resource type="Resource" uid="uid://boc7rgloqrhwe" path="res://resources/items/orange.tres" id="4_orange"]
+
+[sub_resource type="Resource" id="Resource_input"]
+script = ExtResource("2_ingredient")
+item = ExtResource("3_banana")
+count = 2
+metadata/_custom_type_script = "uid://cjpkm5deth0y6"
+
+[sub_resource type="Resource" id="Resource_output"]
+script = ExtResource("2_ingredient")
+item = ExtResource("4_orange")
+count = 1
+metadata/_custom_type_script = "uid://cjpkm5deth0y6"
+
+[resource]
+script = ExtResource("1_recipe")
+ingredients = Array[ExtResource("2_ingredient")]([SubResource("Resource_input")])
+output = SubResource("Resource_output")
+metadata/_custom_type_script = "uid://cug1qrxov5i3a"

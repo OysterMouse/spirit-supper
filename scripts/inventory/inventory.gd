@@ -47,6 +47,36 @@ func add_item(item: ItemData, amount : int = 1):
 	changed.emit()
 	return remaining
 
+func remove_item(item: ItemData, amount: int) -> void:
+	for i in range(slots.size()):
+		if amount <= 0:
+			break
+
+		var slot := slots[i]
+		if slot == null or slot.item != item:
+			continue
+
+		var removed: int = min(slot.quantity, amount)
+		slot.quantity -= removed
+		amount -= removed
+
+		if slot.quantity <= 0:
+			slots[i] = null
+	changed.emit()
+
+func has_count(item: ItemData, amount: int) -> bool:
+	var total := 0
+	for slot in slots:
+		if slot == null:
+			continue
+
+		if slot.item == item:
+			total += slot.quantity
+			
+			if total >= amount:
+				return true
+	return false
+
 func swap_slots(a: int, b: int):
 	var slot_a = slots[a]
 	var slot_b = slots[b]

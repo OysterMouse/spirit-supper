@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dl6pulm2f0vgu"]
+
+[ext_resource type="Texture2D" uid="uid://dogqvgvwh3kqo" path="res://assets/1.png" id="1_6w0rd"]
+[ext_resource type="Script" uid="uid://bg27wek6hkhcm" path="res://scripts/recipes/recipe_button.gd" id="1_yfw8c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfw8c"]
+atlas = ExtResource("1_6w0rd")
+region = Rect2(176, 0, 16, 16)
+
+[node name="RecipeButton" type="HBoxContainer" unique_id=447725777]
+custom_minimum_size = Vector2(24, 24)
+offset_right = 24.0
+offset_bottom = 24.0
+script = ExtResource("1_yfw8c")
+
+[node name="Texture" type="TextureButton" parent="." unique_id=1671864362]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_yfw8c")
+stretch_mode = 0

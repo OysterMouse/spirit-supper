@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bfytvfd57vvgv" path="res://scenes/inventory.tscn" id="13_jej6c"]
 [ext_resource type="PackedScene" uid="uid://oyexr40p88xf" path="res://scenes/inventory_gui.tscn" id="14_f1ej7"]
 [ext_resource type="PackedScene" uid="uid://brk2awunpm6u0" path="res://scenes/hotbar.tscn" id="14_oprun"]
+[ext_resource type="PackedScene" uid="uid://bif3tk3lanayr" path="res://scenes/crafting_menu.tscn" id="16_a8ls1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ujl30"]
 atlas = ExtResource("1_qhqgy")
@@ -2382,6 +2383,9 @@ debug_color = Color(0.83859545, 0.0011986482, 0.9276236, 0.41960785)
 [node name="Hotbar" parent="CanvasLayer" unique_id=1161711699 node_paths=PackedStringArray("inventory") instance=ExtResource("14_oprun")]
 size_flags_vertical = 8
 inventory = NodePath("../../Inventory")
+
+[node name="CraftingMenu" parent="CanvasLayer" unique_id=460204409 instance=ExtResource("16_a8ls1")]
+visible = false
 
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/Attack" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/Chop" method="_on_animation_tree_animation_finished"]
