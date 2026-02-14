@@ -13,9 +13,15 @@ func _get_drag_data(at_position: Vector2):
 	if not icon.visible:
 		return null
 	
-	var drag_preview = TextureRect.new()
-	drag_preview.custom_minimum_size = Vector2(24, 24)
+	var drag_preview := TextureRect.new()
+	drag_preview.top_level = true
+	drag_preview.z_as_relative = false
+	drag_preview.z_index = 9999
+	drag_preview.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	drag_preview.texture = icon.texture
+	drag_preview.custom_minimum_size = Vector2(24, 24)
+	drag_preview.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+	drag_preview.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
 	set_drag_preview(drag_preview)
 	
 	var data = {
@@ -31,7 +37,3 @@ func _drop_data(at_position: Vector2, data) -> void:
 	var to_index = slot_index
 	
 	inventory.request_swap(from_index, to_index)
-
-func _gui_input(event):
-	if event is InputEventMouseButton and event.pressed:
-		print("CLICKED SLOT", slot_index)

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://beqsa5xaw5t4p" path="res://scenes/dark_forest_tree.tscn" id="5_lakw3"]
 [ext_resource type="Resource" uid="uid://dctebfs1f6tqp" path="res://resources/items/banana.tres" id="6_7r4gi"]
 [ext_resource type="Resource" uid="uid://1kaka7eqxgwb" path="res://resources/enemies/blue_slime.tres" id="7_dss4m"]
+[ext_resource type="Script" uid="uid://cpgx3mh8kd30c" path="res://scenes/camera_2d.gd" id="7_pm21f"]
 [ext_resource type="Resource" uid="uid://boc7rgloqrhwe" path="res://resources/items/orange.tres" id="7_w7kh3"]
 [ext_resource type="Resource" uid="uid://bvncoy7qeddvv" path="res://resources/tools/sword.tres" id="8_4mrxx"]
 [ext_resource type="Resource" uid="uid://dtpvdkbdsm8gd" path="res://resources/enemies/goblin_archer.tres" id="8_xo05s"]
@@ -253,6 +254,7 @@ limit_left = -300
 limit_top = -300
 limit_right = 768
 limit_bottom = 300
+script = ExtResource("7_pm21f")
 
 [node name="BlueSlimeSpawner" type="Node2D" parent="." unique_id=1962497781]
 position = Vector2(342, 50)

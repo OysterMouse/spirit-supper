@@ -3,7 +3,7 @@ extends Node
 
 @export var items : Array[ItemData] = []
 @onready var camera_2d: Camera2D = $"../Player/Camera2D"
-@onready var inventory_gui: InventoryGUI = $"../Player/InventoryGUI"
+@onready var inventory_gui: InventoryGUI = $"../Player/CanvasLayer/InventoryGUI"
 @onready var crafting_menu: Control = $"../Player/CanvasLayer/CraftingMenu"
 
 func _is_ui_open() -> bool:
