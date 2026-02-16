@@ -13,6 +13,6 @@ func _ready() -> void:
 	
 	var axe: GameItem = item_axe.world_item_scene.instantiate()
 	axe.setup(item_axe)
-	axe.global_position = Vector2(600, -200)
+	axe.global_position = Vector2(600, -175)
 	axe.z_index = 100
 	add_child(axe)

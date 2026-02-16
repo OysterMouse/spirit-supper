@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://rotm7iys6vwf"]
+
+[ext_resource type="Script" uid="uid://c2gij0se3n6eg" path="res://scripts/sound_manager.gd" id="1_s6peo"]
+[ext_resource type="AudioStream" uid="uid://dy2akrgb1s05r" path="res://assets/sounds/impactWood_light_001.ogg" id="2_shlr6"]
+
+[node name="SoundManager" type="Node" unique_id=390740463]
+script = ExtResource("1_s6peo")
+
+[node name="ChopTree" type="AudioStreamPlayer" parent="." unique_id=548302462]
+stream = ExtResource("2_shlr6")

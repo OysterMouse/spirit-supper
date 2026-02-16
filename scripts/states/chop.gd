@@ -20,6 +20,7 @@ func enter() -> void:
 	# Enable monitoring and check for overlaps
 	if hit_component:
 		hit_component.enable_and_check()
+		SoundManager.play_sound("ChopTree")
 	
 	parent.velocity = Vector2.ZERO
 

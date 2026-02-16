@@ -240,6 +240,7 @@ tile_map_data = PackedByteArray("AADm/+3/AAAKAAMAAADn/+3/AAAKAAMAAADo/+3/AAAKAAM
 tile_set = SubResource("TileSet_lakw3")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Layers" unique_id=45913627]
+modulate = Color(0.88574266, 0.9913719, 2.3102762e-06, 1)
 tile_map_data = PackedByteArray("AAAgAPb/AgAAAAAAAQAhAPb/AgAAAAAAAQAiAPb/AgAAAAAAAQAiAPf/AgAAAAAAAQAjAPf/AgAAAAAAAQAkAPf/AgAAAAAAAQAlAPf/AgAAAAAAAQAlAPj/AgAAAAAAAQAmAPj/AgAAAAAAAQAnAPj/AgAAAAAAAQAoAPj/AgAAAAAAAQApAPj/AgAAAAAAAQApAPn/AgAAAAAAAQA=")
 tile_set = SubResource("TileSet_2lf6f")
 
